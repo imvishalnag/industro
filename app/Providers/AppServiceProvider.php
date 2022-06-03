@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\Category;
 use App\Models\City;
+use App\Models\Distributor;
 use App\Models\Page;
 use App\Models\SubCategory;
 use Illuminate\Support\Facades\View;
@@ -36,10 +37,10 @@ class AppServiceProvider extends ServiceProvider
                 });
                 return $category;
             });
-            // $city = City::where('status',1)->get();
+            $distributor = Distributor::orderBy('id')->get();
             // $disease = SubCategory::where('status',1)->get();
             
-            $header_data =['category'=>$category,];
+            $header_data =['category'=>$category,'distributor'=>$distributor,];
             $view->with('header_data',$header_data);
          });
     }

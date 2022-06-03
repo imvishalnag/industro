@@ -19,7 +19,7 @@
                             <div>
                                 <ul class="wt-breadcrumb breadcrumb-style-2">
                                     <li><a href="index.php">Home</a></li>
-                                    <li>About 1</li>
+                                    <li>About</li>
                                 </ul>
                             </div>
                         
@@ -41,30 +41,24 @@
                                     <div class="left wt-small-separator-outer">
                                         <div class="wt-small-separator site-text-primary">
                                             <div  class="sep-leaf-left"></div>
-                                            <div>Welcome to JB</div>
+                                            <div>Welcome to HD Engineering</div>
                                             <div  class="sep-leaf-right"></div>
                                         </div>
                                     </div>
-                                    <h2>We Are Here to Increase Your Knowledge With Experience</h2>
-                                    <!-- TITLE END-->
-                                    <ul class="site-list-style-one">
-                                        <li>Quality Control System , 100% Satisfaction Guarantee</li>
-                                        <li>Unrivalled Workmanship, Professional and Qualified</li>
-                                        <li>Environmental Sensitivity, Personalised Solutions</li>
-                                    </ul>
-                                    
-                                    <p>Progressively maintain extensive infomediaries via extensible nich. Capitalize on low hanging fruit. a ballpark value added is activity to beta test. Override the digital divide with additional click throughs from fruit to identify a ballpark value added.</p> 
-                                    
+                                    <div class="site-list-style-two p-a10">
+                                        {!!$about->description!!}
+                                    </div>
+
                                     <div class="welcom-to-section-bottom d-flex justify-content-between">
-                                        <div class="welcom-btn-position"><a href="about-2.html" class="site-button-secondry site-btn-effect">More About</a></div>
+                                        <div class="welcom-btn-position"><a href="{{route('web.contact')}}" class="site-button-secondry site-btn-effect">Contact Us</a></div>
                                     </div>   
                                 </div>
                             </div>
                             
                             <div class="col-lg-6 col-md-12 m-b30">
                                 <div class="img-colarge2">
-                                    <div class="colarge-2 slide-right"><img src="{{asset('web/images/colarge/s2.jpg')}}" alt=""></div>
-                                    <div class="colarge-2-1"><img src="{{asset('web/images/colarge/s1.jpg')}}" alt=""></div>
+                                    <div class="colarge-2 slide-right"><img src="{{ asset('backend_images/'.$about->image_one.'')}}" alt=""></div>
+                                    <div class="colarge-2-1"><img src="{{ asset('backend_images/'.$about->image_two.'')}}" alt=""></div>
                                     <div class="since-year-outer2"><div class="since-year2"><span>Since</span><strong>2015</strong></div></div>
                                 </div>
                             </div>                              

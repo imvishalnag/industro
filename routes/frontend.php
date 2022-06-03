@@ -9,7 +9,7 @@ use App\Http\Controllers\Web\FrontEndController;
 Route::get('/',[FrontEndController::class,'index'])->name('web.index');
 
 // about
-Route::view('/about','web.about')->name('web.about');
+Route::get('/about',[FrontEndController::class,'about'])->name('web.about');
 
 // contact
 Route::view('/contact','web.contact')->name('web.contact');

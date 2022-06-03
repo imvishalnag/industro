@@ -1,5 +1,5 @@
         <!-- FOOTER START -->
-        <footer class="site-footer footer-large footer-dark text-white footer-style1" >        
+        <footer class="site-footer footer-large footer-dark text-white" >        
             <!-- FOOTER BLOCKES START -->  
             <div class="footer-top bg-no-repeat bg-bottom-right" style="background-image:url(images/background/footer-bg.png)">
                 <div class="container">
@@ -9,23 +9,20 @@
                         	<div class="footer-h-left"> 
                                 <div class="widget widget_about">
                                     <div class="logo-footer clearfix">
-                                        <a href="index.html"><img src="{{asset('web/images/logo-light.png')}}" alt="" ></a>
+                                        <a href="index.html"><img src="{{asset('web/images/logo.webp')}}" alt="" ></a>
                                     </div>
                                  </div>
-                                <div class="widget recent-posts-entry">
+                                <div class="widget recent-posts-entry mb-0">
                                    <ul class="widget_address"> 
-                                        <li><i class="fa fa-map-marker"></i>San Francisco City Hall, San Francisco, CA</li>
-                                        <li><i class="fa fa-envelope"></i>contact123@gmail.com</li>
-                                        <li> <i class="fa fa-phone"></i>(654) 321-7654 </li>
+                                        <li><i class="fa fa-envelope"></i>info@hdtnm.com</li>
+                                        <li> <i class="fa fa-phone"></i>0361 6774480 / 9101177485</li>
+                                        <li style="line-height: 1.4;"><i class="fa fa-map-marker"></i><strong style="color: black">HD ENGINEERING & SERVICES</strong><br />ASIDC Head office complex, Bamunimaidan, near guwahati college bus stop, opp. sani mandir, Guwahati-781021</li>
+                                        <li style="line-height: 1.4;"><i class="fa fa-clock-o"></i><strong style="color: black">OPENING HOURS</strong> <br />
+                                            Monday to Saturday : 9:30 AM to 7:00 PM <br />
+                                            Sunday : Closed
+                                        </li>
                                     </ul>  
                                 </div>
-                                <ul class="social-icons  wt-social-links footer-social-icon">
-                                    <li><a href="javascript:void(0);" class="fa fa-google"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
-                                    <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
-                                </ul> 
                             </div>                              
                             
                         </div> 
@@ -36,11 +33,11 @@
                                     <div class="widget widget_services">
                                         <h3 class="widget-title">Useful links</h3>
                                         <ul>
-                                            <li><a href="our-prices.html">Home</a></li>
-                                            <li><a href="about-1.html">About</a></li>
-                                            <li><a href="Faq.html">Contact Us</a></li>                                     
-                                            <li><a href="blog-list-sidebar.html">Service Related Quaries Registration</a></li>
-                                            <li><a href="blog-post-right-sidebar.html">Customer Support Contact & Email</a></li>
+                                            <li><a href="{{route('web.index')}}">Home</a></li>
+                                            <li><a href="{{route('web.about')}}">About</a></li>
+                                            <li><a href="{{route('web.contact')}}">Contact Us</a></li>                                     
+                                            <li><a href="#">Service Related Quaries Registration</a></li>
+                                            <li><a href="#">Customer Support Contact & Email</a></li>
                                         </ul>
                                     </div>
                             	</div>
@@ -49,13 +46,24 @@
                                     <div class="widget widget_services">
                                         <h3 class="widget-title">Additional links</h3>
                                         <ul>
-                                            <li><a href="project-grid.html">Case Study</a></li>                                        
-                                            <li><a href="project-masonry.html">Application Note</a></li>
-                                            <li><a href="project-carousel.html">Product Writeup</a></li>
-                                            <li><a href="project-detail.html">White Paper</a></li>   
-                                            <li><a href="blog-grid.html">Feedback</a></li>   
+                                            <li><a href="#">Case Study</a></li>                                        
+                                            <li><a href="#">Application Note</a></li>
+                                            <li><a href="#">Product Writeup</a></li>
+                                            <li><a href="#">White Paper</a></li>   
+                                            <li><a href="#">Feedback</a></li>   
                                         </ul>
                                     </div>
+                            	</div>     
+
+                            	<div class="col-lg-12 col-md-12">
+                                    <h3 class="widget-title">Social Media Handels</h3>
+                                    <ul class="social-icons  wt-social-links footer-social-icon">
+                                        <li><a href="javascript:void(0);" class="fa fa-google"></a></li>
+                                        <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
+                                        <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
+                                        <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
+                                        <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
+                                    </ul> 
                             	</div>                                
                             
                             </div>
@@ -70,10 +78,10 @@
             <div class="footer-bottom">
               <div class="container">
                 <div class="wt-footer-bot-left d-flex justify-content-between">
-                    <span class="copyrights-text">Copyright © 2020 <span class="site-text-primary">JB </span> | Designed and Developed By <span class="site-text-primary">Softnue </span> </span>
+                    <span class="copyrights-text">Copyright © 2022 <span class="site-text-primary">HD Engineering </span> | Designed and Developed By <a href="https://softnue.com/" target="_blank"><span class="site-text-primary">Softnue </span> </a></span>
                     <ul class="copyrights-nav"> 
-                        <li><a href="javascript:void(0);">Terms  &amp; Condition</a></li>
-                        <li><a href="javascript:void(0);">Privacy Policy</a></li>
+                        {{-- <li><a href="javascript:void(0);">Terms  &amp; Condition</a></li>
+                        <li><a href="javascript:void(0);">Privacy Policy</a></li> --}}
                         <li><a href="contact-1.html">Contact Us</a></li>
                     </ul>     
                 </div>
@@ -91,14 +99,41 @@
                  <div class="contact-nav-form">
                     <div class="contact-nav-info bg-white p-a30 bg-center bg-no-repeat" style="background-image:url(images/background/bg-map2.png);">
                     	<div class="row">
-                        	<div class="col-lg-4 col-md-4">
-                            	<div class="contact-nav-media-section">
-                                	<div class="contact-nav-media">
-                                    	<img src="images/self-pic.png" alt="">
-                                    </div>
+                        	<div class="col-lg-6 col-md-6">
+                                <div class="contact-nav-inner text-black">
+                                    <!-- TITLE START -->
+                                    <h2 class="m-b30">Contact Info</h2>
+                                    <!-- TITLE END -->
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="wt-icon-box-wraper left icon-shake-outer">
+                                                    <div class="icon-content">
+                                                        <h4 class="m-t0 m-t0 mb-0">Phone number</h4>
+                                                        <p>0361 6774480</p>
+                                                        <p>9101177485</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="wt-icon-box-wraper left icon-shake-outer">
+                                                    <div class="icon-content">
+                                                        <h4 class="m-t0 m-t0 mb-0">Email address</h4>
+                                                        <p>info@hdtnm.com</p>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="wt-icon-box-wraper left icon-shake-outer">
+                                                    <div class="icon-content">
+                                                        <h4 class="m-t0 m-t0 mb-0">Address info</h4>
+                                                        <p><strong style="color: black">HD ENGINEERING & SERVICES</strong><br />ASIDC Head office complex, Bamunimaidan, near guwahati college bus stop, opp. sani mandir, Guwahati-781021</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                      </div>
                                 </div>
                             </div>
-                            <div class="col-lg-8 col-md-8">
+                            <div class="col-lg-6 col-md-6">
                                 <form class="cons-contact-form" method="post" action="http://thewebmax.com/industro/form-handler2.php">
                                     <div class="m-b30">
                                         <!-- TITLE START -->
@@ -142,39 +177,6 @@
                                             </div>
                                     </div>
                                 </form>
-                                <div class="contact-nav-inner text-black">
-                                    <!-- TITLE START -->
-                                    <h2 class="m-b30">Contact Info</h2>
-                                    <!-- TITLE END -->
-                                        <div class="row">
-                                            <div class="col-lg-4 col-md-12">
-                                                <div class="wt-icon-box-wraper left icon-shake-outer">
-                                                    <div class="icon-content">
-                                                        <h4 class="m-t0">Phone number</h4>
-                                                        <p>(456) 789 10 12</p>
-                                                        <p>(456) 789 10 15</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-12">
-                                                <div class="wt-icon-box-wraper left icon-shake-outer">
-                                                    <div class="icon-content">
-                                                        <h4 class="m-t0">Email address</h4>
-                                                        <p>demo@gmail.com</p>
-                                                        <p>indusinfo@gmail.com</p>
-                                                    </div>
-                                                </div>
-                                            </div>    
-                                            <div class="col-lg-4 col-md-12">
-                                                <div class="wt-icon-box-wraper left icon-shake-outer">
-                                                    <div class="icon-content">
-                                                        <h4 class="m-t0">Address info</h4>
-                                                        <p>1363-1385 Sunset Blvd Los Angeles</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                      </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -246,39 +248,5 @@
 @yield('script')
 
 
-<!-- STYLE SWITCHER  ======= --> 
-<div class="styleswitcher">
-
-    <div class="switcher-btn-bx">
-        <a class="switch-btn">
-            <span class="fa fa-cog fa-spin"></span>
-        </a>
-    </div>
-    
-    <div class="styleswitcher-inner">
-    
-        <h6 class="switcher-title">Color Skin</h6>
-        <ul class="color-skins">
-            <li><a class="theme-skin skin-1" href="index-10a39b.html?theme=css/skin/skin-1"></a></li>
-            <li><a class="theme-skin skin-2" href="index-1061e7.html?theme=css/skin/skin-2"></a></li>
-            <li><a class="theme-skin skin-3" href="index-10cce5.html?theme=css/skin/skin-3"></a></li>
-            <li><a class="theme-skin skin-4" href="index-1013f7.html?theme=css/skin/skin-4"></a></li>
-            <li><a class="theme-skin skin-5" href="index-1019a6.html?theme=css/skin/skin-5"></a></li>
-            <li><a class="theme-skin skin-6" href="index-10fe5c.html?theme=css/skin/skin-6"></a></li>
-            <li><a class="theme-skin skin-7" href="index-10ab47.html?theme=css/skin/skin-7"></a></li>
-            <li><a class="theme-skin skin-8" href="index-105f8d.html?theme=css/skin/skin-8"></a></li>
-            <li><a class="theme-skin skin-9" href="index-105663.html?theme=css/skin/skin-9"></a></li>
-            <li><a class="theme-skin skin-10" href="index-1028ac.html?theme=css/skin/skin-10"></a></li>
-            <li><a class="theme-skin skin-11" href="index-1026b8.html?theme=css/skin/skin-11"></a></li>
-            <li><a class="theme-skin skin-12" href="index-107f4c.html?theme=css/skin/skin-12"></a></li>
-        </ul>           
-        
-    </div>    
-</div>
-<!-- STYLE SWITCHER END ==== -->
-
 </body>
-
-
-<!-- Mirrored from thewebmax.com/industro/index-10.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 05 Apr 2021 09:07:06 GMT -->
 </html>

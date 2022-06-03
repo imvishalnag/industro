@@ -18,7 +18,37 @@
                         <form action="{{route('admin.about_edit')}}" method="post" enctype="multipart/form-data">
                         @csrf
                             <div id="img_div">
-                                <div class="row">
+                                <div class="form-group row">
+                                    <div class="col-sm-6">
+                                        <label for="image_one" >Image Top</label>
+                                        <input type="file" name="image_one" class="form-control">
+                                        
+                                        @if($errors->has('image_one'))
+                                        <div class="alert alert-danger" role="alert">
+                                            <strong>{{ $errors->first('image_one') }}</strong>
+                                        </div>
+                                        @enderror
+
+                                        @if($about->image_one)
+                                        <img src="{{ asset('backend_images/'.$about->image_one.'')}}" style="width: 150px;margin-top: 10px;" />
+                                        @enderror
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="image_two" >Image Bottom</label>
+                                        <input type="file" name="image_two" class="form-control">
+                                        
+                                        @if($errors->has('image_two'))
+                                        <div class="alert alert-danger" role="alert">
+                                            <strong>{{ $errors->first('image_two') }}</strong>
+                                        </div>
+                                        @enderror
+
+                                        @if($about->image_two)
+                                        <img src="{{ asset('backend_images/'.$about->image_two.'')}}" style="width: 150px;margin-top: 10px;" />
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <div class="col-sm-12">
                                         <label for="surgery_desc" >Description</label>
                                         <style>#cke_1_contents{height: 500px!important;}</style>

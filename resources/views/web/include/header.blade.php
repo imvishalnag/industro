@@ -12,11 +12,11 @@
     <meta name="description" content="" />
     
     <!-- FAVICONS ICON -->
-    <link rel="icon" href="{{asset('web/images/favicon.html')}}" type="image/x-icon" />
+    <link rel="icon" href="{{asset('web/images/favicon.png')}}" type="image/x-icon" />
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('web/images/favicon.png')}}" />
     
     <!-- PAGE TITLE HERE -->
-    <title>Industro | Home Page </title>
+    <title>HD Engineering | India's First Manufacturing & High Voltage Calibration Setup in North-Eastern Region </title>
     
     <!-- MOBILE SPECIFIC -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -88,9 +88,9 @@
                         <div class="d-flex justify-content-between">
                             <div class="wt-topbar-left d-flex flex-wrap align-content-start">
                                 <ul class="wt-topbar-info e-p-bx text-white">
-                                    <li><span> Monday - Saturday</span><span>8AM -7PM</span></li>
-                                    <li><i class="fa fa-phone"></i>+91 94578 65915</li>
-                                    <li><i class="fa fa-envelope"></i>demo@gmail.com</li>
+                                    <li><span> Monday - Saturday</span><span>9:30 AM - 7:00 PM</span></li>
+                                    <li><i class="fa fa-phone"></i>0361 6774480 / 9101177485</li>
+                                    <li><i class="fa fa-envelope"></i>info@hdtnm.com</li>
                                 </ul>
                             </div>
                             
@@ -158,7 +158,7 @@
                             <ul class=" nav navbar-nav">
                                 <li><a href="{{route('web.index')}}">Home</a></li>
                                 
-                                <li><a href="{{route('web.about')}}">About</a></li>
+                                <li><a href="{{route('web.about')}}">About Us</a></li>
 
                                 @if (isset($header_data['category']) && !empty($header_data['category']) && (count($header_data['category']) > 0))
                                     @foreach ($header_data['category'] as $item)
@@ -181,165 +181,15 @@
                                     @endforeach
                                 @endif
 
-                                {{-- <li><a href="javascript:;">Products</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a>CTPT Analyser</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD CPT101</a></li>
-                                                <li><a>HD CPT100</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Winding Resistance Meter</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-WRM20B</a></li>
-                                                <li><a>HD-WRM10B</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Transformer Turns Ratio Meter</a>
-                                            <ul class="sub-item">
-                                                <li><a>HDTRM-P</a></li>
-                                                <li><a>HDTRM-10</a></li>
-                                                <li><a>HDTRM-20</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Thermal Imaging Camera</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD1BS</a></li>
-                                                <li><a>HD2BS</a></li>
-                                                <li><a>HD10B</a></li>
-                                                <li><a>HD20B</a></li>
-                                                <li><a>HD10M</a></li>
-                                                <li><a>HD30M</a></li>
-                                                <li><a>HD40G</a></li>
-                                                <li><a>HD60G</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Clamp on Earth Tester</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-CET</a></li>
-                                                <li><a>HD-CET-10</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Digital Insulation Tester</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-IT5K</a></li>
-                                                <li><a>HD-IT10K</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Digital Earth Tester</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-ET20</a></li>
-                                                <li><a>HD-ET10</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Circuit Breaker Timer/Analyser</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-CBT10</a></li>
-                                                <li><a>HD-CBT20</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Oil Break down Tester (BDV) 80/100kV</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-OTS100</a></li>
-                                                <li><a>HD-OTS80</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Digital Clamp Meter</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-CM10</a></li>
-                                                <li><a>HD-CM20</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Digital Multi Meter</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-DM10</a></li>
-                                                <li><a>HD-DM20</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>High Voltage Detector</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-HVD132</a></li>
-                                                <li><a>HD-HVD400</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>DC Ground Fault Locator</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-GFL10</a></li>
-                                                <li><a>HD-GFL20</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Cable Fault Locator/Pointer</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-CL10</a></li>
-                                                <li><a>HD-CL20</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Micro Ohm Meter</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-MM-10</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a>Primary Injection Test Kit</a>
-                                            <ul class="sub-item">
-                                                <li><a>HD-PIK-10</a></li>
-                                            </ul>
-                                        </li>
-                                                                                    
-                                    </ul>                                
-                                </li> 
-                                <li><a href="javascript:;">Labortory & Calibration Services</a>
-                                    <ul class="sub-menu">
-                                        <li>
-                                            <a href="#">Electrical</a>                                                
-                                            <ul class="sub-item">
-                                                <li><a>CT-PT Testing </a></li>
-                                                <li><a>Turns Ratio Testing</a></li>
-                                                <li><a>Winding Resistance Testing</a></li>
-                                                <li><a>Multifunction Calibration</a></li>
-                                                <li><a>Tandelta Testing</a></li>
-                                                <li><a>Insulation Resistance Testing</a></li>
-                                                <li><a>Earth Testing</a></li>
-                                                <li><a>Thermal Camera Testing</a></li>
-                                                <li><a>Oil BDV Testing</a></li>
-                                                <li><a>Substation Testing</a></li>
-                                            </ul>
-                                        </li>                                        
-                                        <li>
-                                            <a href="#">Instrumentation</a>
-                                            <ul class="sub-item">
-                                                <li><a>Thermal</a></li>
-                                                <li><a>Mechanical</a></li>
-                                                <li><a>Electro-Technical</a></li>
-                                                <li><a>Level</a></li>
-                                                <li><a>Fluid Flow</a></li>
-                                                <li><a>Gas Flow</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>                                
-                                </li> --}}
+                                @if (isset($header_data['distributor']) && !empty($header_data['distributor']) && (count($header_data['distributor']) > 0))
                                 <li><a href="javascript:;">Distributorship</a>
                                     <ul class="sub-menu">
-                                        <li><a target="_blank" href="https://www.sonelindia.com/">SONEL</a></li>                                        
-                                        <li><a target="_blank" href="https://nagman.com/">Nagman</a></li>
-                                        <li><a target="_blank" href="https://www.beacon-india.com/">Beacon</a></li>                             
+                                        @foreach ($header_data['distributor'] as $item)
+                                        <li><a target="_blank" href="{{$item->link}}">{{$item->name}}</a></li>
+                                        @endforeach
                                     </ul>                                
                                 </li>                                  
+                                @endif                           
                                 <li><a href="javascript:;">Knowledge</a>
                                     <ul class="sub-menu">
                                         <li><a href="project-grid.html">Case Study</a></li>                                        

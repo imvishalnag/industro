@@ -320,10 +320,9 @@
                                         <div class="left wt-small-separator-outer">
                                             <div class="wt-small-separator site-text-primary">
                                                 <div  class="sep-leaf-left"></div>
-                                                <div>About Industroz</div>
+                                                <div>About HD Engineering</div>
                                                 <div  class="sep-leaf-right"></div>
                                             </div>
-                                            <h2>We Provide top industrial Services.</h2>
 
                                         </div>                                    
                                         <!-- TITLE END-->
@@ -353,7 +352,7 @@
             </div>   
             <!-- ABOUT ONE SECTION END -->    
 
-            <!-- QUALITY SECTION START -->
+            {{-- <!-- QUALITY SECTION START -->
             <div class="section-full p-b30 ">
                 <div class="container">
                     <!-- TITLE START-->
@@ -411,150 +410,32 @@
                     </div>
                 </div>      
             </div>   
-            <!-- QUALITY SECTION END -->  
+            <!-- QUALITY SECTION END -->   --}}
                                    
             <!-- CLIENT LOGO SECTION START -->
+            @if(isset($client) && $client->count() > 0 )
             <div class="section-full bg-gray p-tb20">
                 <div class="container-fluid">
                     <div class="section-content">
-                    
                         <!-- TESTIMONIAL 4 START ON BACKGROUND -->   
                         <div class="section-content">
                              <div class="section-content owl-btn-vertical-center">
-                                <div class="owl-carousel home-client-carousel-2 ">
-                                
+                                <div class="owl-carousel home-client-carousel-2 ">                                    
+                                    @foreach ($client as $item)
                                     <div class="item">
                                         <div class="ow-client-logo">
                                             <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w1.png')}}" alt=""></a></div>
+                                            <a href="javascript:void(0);"><img src="{{ asset('backend_images/'.$item->image.'') }}" alt=""></a></div>
                                         </div>
                                     </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w2.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w3.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w4.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w5.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w6.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w1.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w2.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w3.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w4.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w5.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w6.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>  
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w1.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w2.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w3.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w4.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w5.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="item">
-                                        <div class="ow-client-logo">
-                                            <div class="client-logo client-logo-media">
-                                            <a href="javascript:void(0);"><img src="{{asset('web/images/client-logo/w6.png')}}" alt=""></a></div>
-                                        </div>
-                                    </div>                                                                      
-                                    
+                                    @endforeach      
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endif
             <!-- CLIENT LOGO  SECTION End -->  
        
                           

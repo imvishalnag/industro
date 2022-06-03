@@ -5,9 +5,11 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubCategoryController;
 use App\Http\Controllers\Admin\CityController;
+use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\BlogsController;
 use App\Http\Controllers\Admin\DoctorAppointmentController;
+use App\Http\Controllers\Admin\DistributorController;
 use App\Http\Controllers\Admin\InquiryController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\PressReleaseController;
@@ -209,7 +211,24 @@ Route::group(['namespace' => 'Admin'],function(){
                 Route::get('random/delete/{random_id}',[DoctorAppointmentController::class,'deleteRandom'])->name('admin.random.delete_random');
             });
 
-        }); 
+        });
+
+        Route::group(['prefix' => 'client', 'as' => 'admin.client.'],function(){
+            Route::get('/list',[ClientController::class,'imageList'])->name('list');
+            Route::get('/make/delete/{image_id}',[ClientController::class,'imageDelete'])->name('delete');
+            Route::post('/add',[ClientController::class,'imageAddMore'])->name('add');
+        });        
+
+        Route::group(['prefix'=>'distributor' , 'as' => 'admin.distributor.'],function(){
+            Route::get('list',[DistributorController::class,'distributorList'])->name('list');
+            Route::get('/delete/{distributor_id}',[DistributorController::class,'distributorDelete'])->name('delete');
+            Route::get('add/form',[DistributorController::class,'addDistributor'])->name('add_form');
+            Route::post('insert',[DistributorController::class,'insertDistributor'])->name('insert');
+        });
+
+        // about        
+        Route::get('/about/view/',[AboutController::class,'singlePost'])->name('admin.about_view');
+        Route::post('/about/edit/',[AboutController::class,'updatePost'])->name('admin.about_edit');
             
         // other pages
         Route::view('/additional-page', 'admin.about.list')->name('admin.about.list');
@@ -218,8 +237,6 @@ Route::group(['namespace' => 'Admin'],function(){
         Route::view('/why_we_are/list/', 'admin.about.why-list')->name('admin.about.why-list');
         Route::get('/why_we_are/view/',[WhyController::class,'singlePost'])->name('admin.why_view');
         Route::post('/why_we_are/edit/',[WhyController::class,'updatePost'])->name('admin.why_edit');
-        Route::get('/about/view/',[AboutController::class,'singlePost'])->name('admin.about_view');
-        Route::post('/about/edit/',[AboutController::class,'updatePost'])->name('admin.about_edit');
         Route::get('/history/view/',[HistoryController::class,'singlePost'])->name('admin.history_view');
         Route::post('/history/edit/',[HistoryController::class,'updatePost'])->name('admin.history_edit');
         Route::get('/management/view/',[ManagementController::class,'singlePost'])->name('admin.management_view');

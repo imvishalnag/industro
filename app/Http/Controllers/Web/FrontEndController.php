@@ -13,11 +13,13 @@ use App\Models\Management;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Career;
+use App\Models\Client;
 use App\Models\Csr;
 use App\Models\Cause;
 use App\Models\Chairmen;
 use App\Models\Slider;
 use App\Models\Contact;
+use App\Models\Distributor;
 use App\Models\Doctor;
 use App\Models\DoctorAppointment;
 use App\Models\DoctorSpeciality;
@@ -68,6 +70,8 @@ class FrontEndController extends Controller
         // $banner = Banner::orderBy('id','desc')->get();
         // $blogs = Blog::where('status',1)->latest()->limit(5)->get();
         // $service = HomeService::orderBy('id')->get();
+        // $about = About::where(id,'id')->get();
+        $client = Client::orderBy('id')->get();
         $categories = Category::with('subcategory')->withCount('subcategory')->get()->map(function($category){
             $category->subcategory->map(function($subcategory){
                 $subcategory->page_count = $subcategory->pages->count();
@@ -75,7 +79,7 @@ class FrontEndController extends Controller
             return $category;
         });
         // dd($categories);
-        return view('web.index',compact('categories'));
+        return view('web.index',compact('categories','client'));
     }
 
     /** Show Page Details 
@@ -321,9 +325,9 @@ class FrontEndController extends Controller
     }
 
     public function about()
-    {
-        $about = About::where('id', 1)->first();
-        return view('web.about.about',compact('about'));
+    {   $id = 1;
+        $about = About::find($id);
+        return view('web.about',compact('about'));
     }
 
     public function history()

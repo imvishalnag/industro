@@ -85,9 +85,15 @@
                             <li>
                                 <a href="{{route('admin.subcategory.list')}}" class="waves-effect"><i class="dripicons-document"></i> <span> Menu Pages </span> </a>
                             </li>
-                            {{-- <li>
-                                <a href="{{route('admin.doctor.list')}}" class="waves-effect"><i class="mdi mdi-account-key"></i> <span> Doctor </span> </a>
-                            </li> --}}
+                            <li>
+                                <a href="{{route('admin.client.list')}}" class="waves-effect"><i class="mdi mdi-account-key"></i> <span> Client </span> </a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.distributor.list')}}" class="waves-effect"><i class="fa fa-gears"></i><span> Distributor </span></a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.about_view')}}" class="waves-effect"><i class="fa fa-gears"></i><span> About </span></a>
+                            </li>
                             {{-- <li>
                                 <a href="{{route('admin.about.list')}}" class="waves-effect"><i class="fa fa-gears"></i><span> Addtional Pages </span></a>
                             </li> --}}
