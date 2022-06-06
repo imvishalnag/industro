@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\City;
 use App\Models\Distributor;
 use App\Models\Page;
+use App\Models\Knowledge;
 use App\Models\SubCategory;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -38,9 +39,9 @@ class AppServiceProvider extends ServiceProvider
                 return $category;
             });
             $distributor = Distributor::orderBy('id')->get();
-            // $disease = SubCategory::where('status',1)->get();
+            $knowledge = Knowledge::orderBy('id')->get();
             
-            $header_data =['category'=>$category,'distributor'=>$distributor,];
+            $header_data =['category'=>$category,'distributor'=>$distributor,'knowledge'=>$knowledge];
             $view->with('header_data',$header_data);
          });
     }

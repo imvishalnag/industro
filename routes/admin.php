@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\BlogsController;
 use App\Http\Controllers\Admin\DoctorAppointmentController;
 use App\Http\Controllers\Admin\DistributorController;
 use App\Http\Controllers\Admin\InquiryController;
+use App\Http\Controllers\Admin\KnowledgeController;
 use App\Http\Controllers\Admin\ReviewController;
 use App\Http\Controllers\Admin\PressReleaseController;
 use App\Http\Controllers\Admin\SpecialityController;
@@ -54,6 +55,11 @@ Route::group(['namespace' => 'Admin'],function(){
         Route::group(['prefix'=>'subcategory'],function(){
             Route::get('list',[SubCategoryController::class,'subCategoryList'])->name('admin.subcategory.list');
             Route::get('list/ajax',[SubCategoryController::class,'subCategoryListAjax'])->name('admin.subcategory.list_ajax');
+
+            // Specific Page
+            Route::view('product_list','admin.subcategory.product_list')->name('admin.subcategory.product_list');
+            Route::view('calibration_list','admin.subcategory.calibration_list')->name('admin.subcategory.calibration_list');
+            Route::get('list/ajax/{cat_id}',[SubCategoryController::class,'subCategorySpecificListAjax'])->name('admin.subcategory.specific_list_ajax');
             Route::get('add/form',[SubCategoryController::class,'addSubCategoryForm'])->name('admin.subcategory.add_form');
             Route::post('insert',[SubCategoryController::class,'addSubCategory'])->name('admin.subcategory.insert');
             Route::get('edit/form/{sub_cat_id}',[SubCategoryController::class,'editSubCategoryForm'])->name('admin.subcategory.edit_form');
@@ -233,94 +239,16 @@ Route::group(['namespace' => 'Admin'],function(){
         // other pages
         Route::view('/additional-page', 'admin.about.list')->name('admin.about.list');
 
-        // why_we_are
-        Route::view('/why_we_are/list/', 'admin.about.why-list')->name('admin.about.why-list');
-        Route::get('/why_we_are/view/',[WhyController::class,'singlePost'])->name('admin.why_view');
-        Route::post('/why_we_are/edit/',[WhyController::class,'updatePost'])->name('admin.why_edit');
-        Route::get('/history/view/',[HistoryController::class,'singlePost'])->name('admin.history_view');
-        Route::post('/history/edit/',[HistoryController::class,'updatePost'])->name('admin.history_edit');
-        Route::get('/management/view/',[ManagementController::class,'singlePost'])->name('admin.management_view');
-        Route::post('/management/edit/',[ManagementController::class,'updatePost'])->name('admin.management_edit');
-        Route::get('/hsc/view/',[HseController::class,'singlePost'])->name('admin.hse_view');
-        Route::post('/hsc/edit/',[HseController::class,'updatePost'])->name('admin.hse_edit');
-
-        // innovation
-        Route::view('/innovation/list/', 'admin.about.innovation-list')->name('admin.about.innovation-list');
-        Route::get('/innovation/view/',[InnovationController::class,'singlePost'])->name('admin.innovation_view');
-        Route::post('/innovation/edit/',[InnovationController::class,'updatePost'])->name('admin.innovation_edit');
-        Route::get('/idea/view/',[InnovationController::class,'ideasinglePost'])->name('admin.idea_view');
-        Route::post('/idea/edit/',[InnovationController::class,'ideaupdatePost'])->name('admin.idea_edit');
-        Route::get('/product/view/',[InnovationController::class,'productsinglePost'])->name('admin.product_view');
-        Route::post('/product/edit/',[InnovationController::class,'productupdatePost'])->name('admin.product_edit');
-        Route::get('/service/view/',[InnovationController::class,'servicesinglePost'])->name('admin.service_view');
-        Route::post('/service/edit/',[InnovationController::class,'serviceupdatePost'])->name('admin.service_edit');
-
-        // media
-        Route::view('/media/list/', 'admin.about.media-list')->name('admin.about.media-list');
-        Route::get('/media/view/',[MediaController::class,'singlePost'])->name('admin.media_view');
-        Route::post('/media/edit/',[MediaController::class,'updatePost'])->name('admin.media_edit');
-        Route::post('/csr/edit/',[MediaController::class,'updatePost'])->name('admin.csr_edit');
-        Route::get('/whats_new/view/',[MediaController::class,'whatsinglePost'])->name('admin.what_view');
-        Route::post('/whats_new/edit/',[MediaController::class,'whatupdatePost'])->name('admin.what_edit');
-        Route::get('/social_media/view/',[MediaController::class,'socialsinglePost'])->name('admin.social_view');
-        Route::post('/social_media/edit/',[MediaController::class,'socialupdatePost'])->name('admin.social_edit');
-        Route::get('/video/view/',[MediaController::class,'videosinglePost'])->name('admin.video_view');
-        Route::post('/video/edit/',[MediaController::class,'videoupdatePost'])->name('admin.video_edit');
-        Route::get('/press/view/',[MediaController::class,'presssinglePost'])->name('admin.press_view');
-        Route::post('/press/edit/',[MediaController::class,'pressupdatePost'])->name('admin.press_edit');
-
-        // csr
-        Route::view('/csr/list/', 'admin.about.csr-list')->name('admin.about.csr-list');
-        Route::get('/csr/view/',[CsrController::class,'singlePost'])->name('admin.csr_view');
-        Route::post('/csr/edit/',[CsrController::class,'updatePost'])->name('admin.csr_edit');
-        Route::get('/health/view/',[CsrController::class,'healthsinglePost'])->name('admin.health_view');
-        Route::post('/health/edit/',[CsrController::class,'healthupdatePost'])->name('admin.health_edit');
-        Route::get('/safety/view/',[CsrController::class,'safetysinglePost'])->name('admin.safety_view');
-        Route::post('/safety/edit/',[CsrController::class,'safetyupdatePost'])->name('admin.safety_edit');
-        Route::get('/enviroment/view/',[CsrController::class,'enviromentsinglePost'])->name('admin.enviroment_view');
-        Route::post('/enviroment/edit/',[CsrController::class,'enviromentupdatePost'])->name('admin.enviroment_edit');
-        Route::get('/activities/view/',[CsrController::class,'activitiessinglePost'])->name('admin.activities_view');
-        Route::post('/activities/edit/',[CsrController::class,'activitiesupdatePost'])->name('admin.activities_edit');
-        
-        // career
-        Route::view('/career/list/', 'admin.about.career-list')->name('admin.about.career-list');
-        Route::get('/career/view/',[CareerController::class,'singlePost'])->name('admin.career_view');
-        Route::post('/career/edit/',[CareerController::class,'updatePost'])->name('admin.career_edit');
-        Route::get('/investor/view/',[CareerController::class,'investorsinglePost'])->name('admin.investor_view');
-        Route::post('/investor/edit/',[CareerController::class,'investorupdatePost'])->name('admin.investor_edit');
-        Route::get('/partner/view/',[CareerController::class,'partnersinglePost'])->name('admin.partner_view');
-        Route::post('/partner/edit/',[CareerController::class,'partnerupdatePost'])->name('admin.partner_edit');
-        Route::get('/employee/view/',[CareerController::class,'employeesinglePost'])->name('admin.employee_view');
-        Route::post('/employee/edit/',[CareerController::class,'employeeupdatePost'])->name('admin.employee_edit');
-        
-        // export
-        Route::view('/export/list/', 'admin.about.export-list')->name('admin.about.export-list');
-        Route::get('/export/view/',[ExportController::class,'singlePost'])->name('admin.export_view');
-        Route::post('/export/edit/',[ExportController::class,'updatePost'])->name('admin.export_edit');
-        Route::get('/east/view/',[ExportController::class,'eastsinglePost'])->name('admin.east_view');
-        Route::post('/east/edit/',[ExportController::class,'eastupdatePost'])->name('admin.east_edit');
-        Route::get('/west/view/',[ExportController::class,'westsinglePost'])->name('admin.west_view');
-        Route::post('/west/edit/',[ExportController::class,'westupdatePost'])->name('admin.west_edit');
-
-        // Index        
-        Route::get('/intro/view/',[IntroController::class,'singlePost'])->name('admin.intro_view');
-        Route::post('/intro/edit/',[IntroController::class,'updatePost'])->name('admin.intro_edit');
-        Route::get('/chairmen/view/',[IntroController::class,'chairmenView'])->name('admin.chairmen_view');
-        Route::post('/chairmen/edit/',[IntroController::class,'chairmenEdit'])->name('admin.chairmen_edit');
-        
-        Route::get('/slider/list',[SliderController::class,'webSliderList'])->name('admin.webSliderList');
-        Route::get('/slider/add/form', [SliderController::class,'webSliderAddForm'])->name('admin.web_slider_add_form');
-        Route::post('/slider/insert/form', [SliderController::class,'insertWebSlider'])->name('admin.insert_web_slider');
-        Route::get('/delete/slider/{id}',[SliderController::class,'deletePost'])->name('admin.slider_delete');
-
-        Route::get('/banner/view/',[BannerController::class,'bannerView'])->name('admin.banner_view');
-        Route::post('/banner/edit/',[BannerController::class,'bannerEdit'])->name('admin.banner_edit');
-
-        Route::get('/service/list',[ServiceController::class,'webServiceList'])->name('admin.webServiceList');
-        Route::get('/service/add/form', [ServiceController::class,'webServiceAddForm'])->name('admin.web_service_add_form');        
-        Route::post('/service/insert/form', [ServiceController::class,'insertWebService'])->name('admin.insert_web_service');
-        Route::get('/service/form/edit/{id}',[ServiceController::class,'webServiceEdit'])->name('admin.service_edit_form');
-        Route::put('/service/update/{id}',[ServiceController::class,'webServiceUpdate'])->name('admin.service_update');
+        // Knowledge
+        Route::view('/knowledge/list/', 'admin.knowledge.list')->name('admin.knowledge.list');
+        Route::get('/case_study/view/',[KnowledgeController::class,'caseStudySinglePost'])->name('admin.case_study_view');
+        Route::post('/case_study/edit/',[KnowledgeController::class,'caseStudyUpdatePost'])->name('admin.case_study_edit');
+        Route::get('/application_note/view/',[KnowledgeController::class,'applicationNoteSinglePost'])->name('admin.application_note_view');
+        Route::post('/application_note/edit/',[KnowledgeController::class,'applicationNoteUpdatePost'])->name('admin.application_note_edit');
+        Route::get('/product_writeup/view/',[KnowledgeController::class,'productWriteupupsinglePost'])->name('admin.product_writeup_view');
+        Route::post('/product_writeup/edit/',[KnowledgeController::class,'productWriteupupupdatePost'])->name('admin.product_writeup_edit');
+        Route::get('/white_paper/view/',[KnowledgeController::class,'whitePapersinglePost'])->name('admin.white_paper_view');
+        Route::post('/white_paper/edit/',[KnowledgeController::class,'whitePaperupdatePost'])->name('admin.white_paper_edit');
     });
 });
 

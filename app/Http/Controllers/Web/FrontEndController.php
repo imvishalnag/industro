@@ -22,6 +22,7 @@ use App\Models\Contact;
 use App\Models\Distributor;
 use App\Models\Doctor;
 use App\Models\DoctorAppointment;
+use App\Models\Knowledge;
 use App\Models\DoctorSpeciality;
 use App\Models\Export;
 use App\Models\Enviroment;
@@ -167,10 +168,10 @@ class FrontEndController extends Controller
     public function addContact(Request $request)
     {
         $rules = array(
-            'contact_name'   => 'required',
-            'contact_email' => 'required',
-            'contact_subject'=>'required',
-            'contact_message' => 'required'
+            'name'   => 'required',
+            'email' => 'required',
+            'subject'=>'required',
+            'message' => 'required'
         );
         // dd($error);
         $error = Validator::make($request->all(), $rules);
@@ -179,10 +180,10 @@ class FrontEndController extends Controller
             return response()->json(['errors' => $error->errors()->all()]);
         }
         $contact =  new Contact();
-        $contact->name = $request->input('contact_name');
-        $contact->subject = $request->input('contact_subject');
-        $contact->email = $request->input('contact_email');
-        $contact->message = $request->input('contact_message');
+        $contact->name = $request->input('name');
+        $contact->subject = $request->input('subject');
+        $contact->email = $request->input('email');
+        $contact->message = $request->input('message');
            
         
         if($contact->save()){
@@ -328,6 +329,11 @@ class FrontEndController extends Controller
     {   $id = 1;
         $about = About::find($id);
         return view('web.about',compact('about'));
+    }
+
+    public function knowledge($slug,$id){
+        $knowledge = Knowledge::find($id);
+        return view('web.knowledge',compact('knowledge','slug'));
     }
 
     public function history()

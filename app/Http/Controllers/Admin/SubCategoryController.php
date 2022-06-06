@@ -56,6 +56,46 @@ class SubCategoryController extends Controller
 
     }
 
+    public function subCategorySpecificListAjax($cat_id)
+    {
+        $query = SubCategory::where('cat_id',$cat_id)->oldest();
+        return datatables()->of($query->get())
+            ->addIndexColumn()
+            ->addColumn('sub_category', function ($row) {
+            
+                return $row->category->name;
+            })
+            ->addColumn('status', function ($row) {
+                $btn ='';
+                if($row->status ==1){
+                    $btn .= '<span class="badge badge-success">Active</span>';
+                
+                }else{
+                    $btn .= '<span class="badge badge-danger">Deactive</a>';
+                }
+                return $btn;
+            })->addColumn('image', function ($row) {
+               return '<img src="'.asset('images/subcategory/photo/'.$row->image).'" style="width:150px;height:150px;">';
+            })
+            ->addColumn('action', function ($row) {
+                $btn ='';
+                if($row->status ==1){
+                
+                    $btn .= '<a  href="'.route('admin.subcategory.status',['sub_cat_id'=>$row->id,'status'=>2]).'" class="btn btn-danger">Disable</a>&nbsp;';
+                }else{
+                    $btn .= '<a  href="'.route('admin.subcategory.status',['sub_cat_id'=>$row->id,'status'=>1]).'" class="btn btn-danger">Enable</a>&nbsp;';
+
+                }
+
+                $btn .= '<a  href="'.route('admin.subcategory.edit_form',['sub_cat_id'=>$row->id]).'" class="btn btn-primary">Edit Pages</a>';
+                return $btn;
+            })
+            ->rawColumns(['status', 'sub_category','action','image'])
+            ->make(true);
+
+
+    }
+
     public function addSubCategoryForm()
     {
         $category =  Category::where('status',1)->latest()->get();

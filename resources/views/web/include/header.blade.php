@@ -27,7 +27,7 @@
     <!-- FONTAWESOME STYLE SHEET -->
     <link rel="stylesheet" type="text/css" href="{{asset('web/css/fontawesome/css/font-awesome.min.css')}}" />
 
-    <!-- OWL CAROUSEL STYLE SHEET -->
+    <!-- OWL CAROUSEL STYLE SHEET -->  
     <link rel="stylesheet" type="text/css" href="{{asset('web/css/owl.carousel.min.css')}}" />
     <!-- BOOTSTRAP SLECT BOX STYLE SHEET  -->
     <link rel="stylesheet" type="text/css" href="{{asset('web/css/bootstrap-select.min.css')}}" />    
@@ -80,7 +80,7 @@
                         </div>   
                     </form>
                 </div>
-            </div>    
+            </div> <!-- END Search -->    
         
             <div class="top-bar site-bg-secondry">
                 <div class="container">
@@ -102,8 +102,7 @@
                         </div>
 
                 </div>
-            </div>  
-                        
+            </div>                          
 
             <div class="container header-middle clearfix">
                 <div class="logo-header">
@@ -192,10 +191,9 @@
                                 @endif                           
                                 <li><a href="javascript:;">Knowledge</a>
                                     <ul class="sub-menu">
-                                        <li><a href="project-grid.html">Case Study</a></li>                                        
-                                        <li><a href="project-masonry.html">Application Note</a></li>
-                                        <li><a href="project-carousel.html">Product Writeup</a></li>
-                                        <li><a href="project-detail.html">White Paper</a></li>                                       
+                                        @foreach ($header_data['knowledge'] as $item)
+                                        <li><a href="{{route('web.knowledge',['slug'=> $item->name, 'id'=> $item->id ])}}">{{$item->name}}</a></li>
+                                        @endforeach                                     
                                     </ul>                                
                                 </li>                                   
                                 <li><a href="javascript:;">Customer Support</a>

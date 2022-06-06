@@ -67,43 +67,37 @@
                             <li class="active">
                                 <a href="{{route('admin.deshboard')}}" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span> Dashboard </span></a>
                             </li>
-                            {{-- <li>
-                                <a href="{{route('admin.appointment.list')}}" class="waves-effect"><i class="fa fa-handshake-o"></i> <span> Appointments </span> </a>
-                            </li> --}}
-                            {{-- <li>
-                                <a href="{{route('admin.pressrelease.list')}}" class="waves-effect"><i class="mdi mdi-microphone-variant"></i> <span> Press Releases </span> </a>
-                            </li>
-                            <li>
-                                <a href="{{route('admin.review.list')}}" class="waves-effect"><i class="typcn typcn-thumbs-ok"></i> <span> Reviews </span> </a>
-                            </li> --}}
                             <li>
                                 <a href="{{route('admin.pages.list')}}" class="waves-effect"><i class="fa fa-product-hunt"></i> <span> Product </span> </a>
                             </li>
                             {{-- <li>
+                                <a href="{{route('admin.appointment.list')}}" class="waves-effect"><i class="fa fa-handshake-o"></i> <span> Appointments </span> </a>
+                            </li> 
+                            <li>
+                                <a href="{{route('admin.pressrelease.list')}}" class="waves-effect"><i class="mdi mdi-microphone-variant"></i> <span> Press Releases </span> </a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.review.list')}}" class="waves-effect"><i class="typcn typcn-thumbs-ok"></i> <span> Reviews </span> </a>
+                            </li>
+                            <li>
                                 <a href="{{route('admin.category.list')}}" class="waves-effect"><i class="fa fa-th-large"></i> <span> Catagory Pages </span> </a>
-                            </li> --}}
+                            </li>
                             <li>
                                 <a href="{{route('admin.subcategory.list')}}" class="waves-effect"><i class="dripicons-document"></i> <span> Menu Pages </span> </a>
                             </li>
                             <li>
-                                <a href="{{route('admin.client.list')}}" class="waves-effect"><i class="mdi mdi-account-key"></i> <span> Client </span> </a>
-                            </li>
-                            <li>
-                                <a href="{{route('admin.distributor.list')}}" class="waves-effect"><i class="fa fa-gears"></i><span> Distributor </span></a>
-                            </li>
-                            <li>
-                                <a href="{{route('admin.about_view')}}" class="waves-effect"><i class="fa fa-gears"></i><span> About </span></a>
-                            </li>
-                            {{-- <li>
                                 <a href="{{route('admin.about.list')}}" class="waves-effect"><i class="fa fa-gears"></i><span> Addtional Pages </span></a>
                             </li> --}}
-                            {{-- <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-blogger"></i><span> Latest News </span></a>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-blogger"></i><span> Menu Pages </span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{route('admin.blog')}}">Post News</a></li>
-                                    <li><a href="{{route('admin.blog_list')}}">News List</a></li>
+                                    <li><a href="{{route('admin.about_view')}}">About Us</a></li>
+                                    <li><a href="{{route('admin.subcategory.product_list')}}">Product</a></li>
+                                    <li><a href="{{route('admin.subcategory.calibration_list')}}">Calibration Services</a></li>
+                                    <li><a href="{{route('admin.distributor.list')}}">Distributor</a></li>
+                                    <li><a href="{{route('admin.knowledge.list')}}">Knowledge</a></li>
                                 </ul>
-                            </li> --}}
+                            </li>
                             {{-- <li>
                                 <a href="{{route('admin.contact.list')}}" class="waves-effect"><i class="ion-android-contacts"></i> <span> Contacts </span> </a>
                             </li> --}}
@@ -122,6 +116,14 @@
                                     <li><a href="{{route('admin.banner_view')}}"> Homepage Banner</a></li>
                                 </ul>
                             </li>   --}}
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-settings"></i><span>Homepage Settings</span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">Homepage About</a></li>
+                                    <li><a href="#">Homepage Service</a></li>
+                                    <li><a href="{{route('admin.client.list')}}">Client</a></li>
+                                </ul>
+                            </li>  
                            
                             <li>
                                 <a href="{{route('admin.change_password_form')}}" class="waves-effect"><i class="mdi mdi-account-key"></i> <span> Change Password </span> </a>

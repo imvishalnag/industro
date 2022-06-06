@@ -17,12 +17,12 @@
                     </div>
                     <!-- BREADCRUMB ROW -->                            
                     
-                        <div>
-                            <ul class="wt-breadcrumb breadcrumb-style-2">
-                                <li><a href="index.php">Home</a></li>
-                                <li>Contact Us</li>
-                            </ul>
-                        </div>
+                    <div>
+                        <ul class="wt-breadcrumb breadcrumb-style-2">
+                            <li><a href="{{route('web.index')}}">Home</a></li>
+                            <li>Contact Us</li>
+                        </ul>
+                    </div>
                     
                     <!-- BREADCRUMB ROW END -->                        
                 </div>
@@ -41,7 +41,7 @@
                         <div class="row  d-flex justify-content-center flex-wrap">
                         
                             <div class="col-lg-6 col-md-6 m-b30">
-                                <form  class="cons-contact-form" method="post" action="http://thewebmax.com/industro/form-handler2.php">
+                                <form id="contact-form" class="cons-contact-form">
                                     <!-- TITLE START -->
                                     <div class="section-head left wt-small-separator-outer">
                                         <div class="wt-small-separator site-text-primary">
@@ -52,40 +52,40 @@
                                         <h2>Get In Touch</h2>
                                     </div>                                                                                
                                     <!-- TITLE END --> 
-                                                                            
+                                    
+                                    <div id="alertone"></div>
+                                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">                 
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
                                             <div class="form-group">
-                                                <input name="username" type="text" required class="form-control" placeholder="Name">
+                                                <input name="name" type="text" id="contact_name" required class="form-control" placeholder="Name">
+                                                <span id="contact_name_err" style="color:red"></span>
                                             </div>
                                         </div>
                                         
                                         <div class="col-lg-12 col-md-12">
                                             <div class="form-group">
-                                                <input name="email" type="text" class="form-control" required placeholder="Email">
+                                                <input name="email" type="text" id="contact_email" class="form-control" required placeholder="Phone/Email">
+                                                <span id="contact_email_err" style="color:red"></span>
                                             </div>
                                         </div>
                                         
                                         <div class="col-lg-12 col-md-12">
                                             <div class="form-group">
-                                                <input name="phone" type="text" class="form-control" required placeholder="Phone">
-                                                </div>
-                                        </div>
-                                        
-                                        <div class="col-lg-12 col-md-12">
-                                            <div class="form-group">
-                                                    <input name="subject" type="text" class="form-control" required placeholder="Subject">
-                                                </div>
+                                                <input name="subject" type="text" id="contact_subject" class="form-control" required placeholder="Subject">
+                                                <span id="contact_subject_err" style="color:red"></span>
+                                            </div>
                                         </div>
                                         
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <textarea name="message" class="form-control" rows="4" placeholder="Message"></textarea>
-                                                </div>
+                                                <textarea name="message" id="contact_message" class="form-control" rows="6" placeholder="Message"></textarea>
+                                                <span id="contact_message_err" style="color:red"></span>
+                                            </div>
                                         </div>
                                         
                                         <div class="col-md-12">
-                                            <button type="submit" class="site-button site-btn-effect">Submit Now</button>
+                                            <button type="submit" id="submit" class="site-button site-btn-effect">Submit Now</button>
                                         </div>
                                         
                                     </div>
@@ -113,7 +113,7 @@
                                                     
                                                     <div class="icon-content">
                                                         <h3 class="m-t0 site-text-primary">Phone number</h3>
-                                                        <p>(+291) 0987 654 321</p>
+                                                        <p>0361 6774480 / 9101177485</p>
                                                     </div>
                                                 </div>
     
@@ -121,7 +121,7 @@
                                                     
                                                     <div class="icon-content">
                                                         <h3 class="m-t0 site-text-primary">Email address</h3>
-                                                        <p>thewebmax@gmail.com</p>
+                                                        <p>info@hdtnm.com</p>
                                                     </div>
                                                 </div>
 
@@ -129,7 +129,8 @@
                                                     
                                                     <div class="icon-content">
                                                         <h3 class="m-t0 site-text-primary">Address info</h3>
-                                                        <p>1363-1385 Sunset Blvd Los Angeles, CA 90026, USA</p>
+                                                        <p><strong style="color: #fff">HD ENGINEERING &amp; SERVICES</strong></p>
+                                                        <p>ASIDC Head office complex, Bamunimaidan, near guwahati college bus stop, opp. sani mandir, Guwahati-781021</p>
                                                     </div>
                                                 </div>
 
@@ -138,8 +139,7 @@
                                                     <div class="icon-content">
                                                         <h3 class="m-t0 site-text-primary">Opening Hours</h3>
                                                         <ul class="list-unstyled m-b0">
-                                                            <li>Mon-Fri: 9 am – 6 pm</li>
-                                                            <li>Saturday: 9 am – 4 pm</li>
+                                                            <li>Monday to Saturday : 9:30 AM to 7:00 PM</li>
                                                             <li>Sunday: Closed</li>
                                                         </ul>
                                                     </div>
@@ -172,4 +172,84 @@
     </div>
     <!-- CONTENT END -->
 
-@endsection    
+@endsection
+
+@section('script')
+    
+<script>
+    $('#contact_email').keyup(function(){
+        var email = $(this).val();
+        if(!isNaN(email)){
+            $(this).attr('type','number');
+            
+        }
+        if( $(this).val() == ''){
+            $(this).attr('type','text');
+            
+        }
+    });
+    $('#contact-form').on('submit', function(e){
+        e.preventDefault();
+        name = $('#contact_name').val();
+        email = $('#contact_email').val();
+        subject = $('#contact_subject').val();
+        message = $('#contact_message').val();
+                
+        if(!name || !email || !subject || !message){
+            if(!name){
+                $('#contact_name_err').html('').show();
+                $('#contact_name_err').html('Please Enter Your Name').fadeOut(3000);
+            }
+            
+            if(!email){
+                $('#contact_email_err').html('').show();
+                $('#contact_email_err').html('Please Enter Email').fadeOut(3000);
+            
+            }
+            
+            if(!subject){
+                $('#contact_subject_err').html('').show();
+                $('#contact_subject_err').html('Please Enter Subject').fadeOut(3000);
+            }
+
+            if(!message){
+                $('#contact_message_err').html('').show();
+                $('#contact_message_err').html('Please Enter Message').fadeOut(3000);
+            }
+        }else{
+       
+            var data = $(this).serializeArray();
+            console.log(data);
+        
+            $.ajaxSetup({
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            });
+            $.ajax({
+                url: "{{route('web.add_contact')}}",
+                method: "POST",
+                data: data,
+                success: function(response){
+                    var html = '';
+                    if(response.errors)
+                    {
+                        html = '<div class="alert alert-danger">';
+                        for(var count = 0; count < response.errors.length; count++){
+                            html += '<p>' + response.errors[count] + '</p>';
+                        }
+                        html += '</div>';
+                    }
+                    if(response.success){
+                        html = '<div class="alert alert-success">' + response.success + '</div>';
+                        $('#contact-form')[0].reset();
+                    }
+                    if(response.error){
+                        html = '<div class="alert alert-danger">' + response.error + '</div>';
+                    }
+                    $("#alertone").html(html);
+                }
+            });
+        }
+
+    });
+</script>
+@endsection

@@ -11,7 +11,7 @@
                     <div class="wt-bnr-inr-entry">
                         <div class="banner-title-outer">
                             <div class="banner-title-name">
-                                <h2 class="site-text-primary">About Us</h2>
+                                <h2 class="site-text-primary">{{$knowledge->name}}</h2>
                             </div>
                         </div>
                         <!-- BREADCRUMB ROW -->                            
@@ -19,7 +19,7 @@
                         <div>
                             <ul class="wt-breadcrumb breadcrumb-style-2">
                                 <li><a href="{{route('web.index')}}">Home</a></li>
-                                <li>About</li>
+                                <li>{{$knowledge->name}}</li>
                             </ul>
                         </div>
                         
@@ -35,33 +35,14 @@
                     <div class="container">
                         <div class="row d-flex justify-content-center">
                         
-                            <div class="col-lg-6 col-md-12 m-b30">
+                            <div class="col-lg-12 col-md-12 m-b30">
                                 <div class="welcom-to-section">
                                     <!-- TITLE START-->
-                                    <div class="left wt-small-separator-outer">
-                                        <div class="wt-small-separator site-text-primary">
-                                            <div  class="sep-leaf-left"></div>
-                                            <div>Welcome to HD Engineering</div>
-                                            <div  class="sep-leaf-right"></div>
-                                        </div>
-                                    </div>
                                     <div class="site-list-style-two p-a10">
-                                        {!!$about->description!!}
-                                    </div>
-
-                                    <div class="welcom-to-section-bottom d-flex justify-content-between">
-                                        <div class="welcom-btn-position"><a href="{{route('web.contact')}}" class="site-button-secondry site-btn-effect">Contact Us</a></div>
-                                    </div>   
+                                        {!!$knowledge->description!!}
+                                    </div> 
                                 </div>
-                            </div>
-                            
-                            <div class="col-lg-6 col-md-12 m-b30">
-                                <div class="img-colarge2">
-                                    <div class="colarge-2 slide-right"><img src="{{ asset('backend_images/'.$about->image_one.'')}}" alt=""></div>
-                                    <div class="colarge-2-1"><img src="{{ asset('backend_images/'.$about->image_two.'')}}" alt=""></div>
-                                    <div class="since-year-outer2"><div class="since-year2"><span>Since</span><strong>2015</strong></div></div>
-                                </div>
-                            </div>                              
+                            </div>                             
 
                         </div>
                     </div> 
