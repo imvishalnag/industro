@@ -19,6 +19,26 @@
                         @csrf
                             <div id="img_div">
                                 <div class="row">
+                                    <div class="col-sm-6">
+                                        <label for="small_text" >Small Text</label>
+                                        <input type="text" class="form-control m-b-10" name="small_text" />
+                                        
+                                        @if($errors->has('small_text'))
+                                            <div class="alert alert-danger" role="alert">
+                                                <strong>{{ $errors->first('small_text') }}</strong>
+                                            </div>
+                                        @enderror
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <label for="big_text" >Big text</label>
+                                        <input type="text" class="form-control m-b-10" name="big_text" />
+                                        
+                                        @if($errors->has('big_text'))
+                                            <div class="alert alert-danger" role="alert">
+                                                <strong>{{ $errors->first('big_text') }}</strong>
+                                            </div>
+                                        @enderror
+                                    </div>
                                     <div class="col-md-8 col-sm-12 col-xs-12 mb-3">
                                         <label for="image">Image Upload <small style="color: red">(900*450 px)</small></label>
                                         <input type="file" class="form-control m-b-10" name="image" accept="/*">
@@ -30,17 +50,6 @@
                                     </div>
                                     <div class="col-md-2 col-sm-12 col-xs-12 mb-3">
                                         {{-- <img src="{{ asset('images/index/thumb/'.$chairmen->image) }}" alt="image" height="200px" class="img-responsive"> --}}
-                                    </div>
-                                    <div class="col-sm-12">
-                                        <label for="surgery_desc" >Description</label>
-                                        <style>#cke_1_contents{height: 500px!important;}</style>
-                                        <textarea  class="form-control ckeditor" name="description"></textarea>
-                                        
-                                        @if($errors->has('surgery_desc'))
-                                            <div class="alert alert-danger" role="alert">
-                                                <strong>{{ $errors->first('long_desc') }}</strong>
-                                            </div>
-                                        @enderror
                                     </div>
                                 </div>
                             </div>

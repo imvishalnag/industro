@@ -7,7 +7,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            {{-- <div class="col-md-6 col-lg-6 col-xl-3">
                 <a href="{{route('admin.category.list')}}" class="mini-stat clearfix bg-primary">
                     <span class="mini-stat-icon"><i class="dripicons-document"></i></span>
                     <div class="mini-stat-info text-right text-white">
@@ -15,8 +15,8 @@
                         Total Category
                     </div>
                 </a>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            </div> --}}
+            <div class="col-md-6 col-lg-6 col-xl-4">
                 <a href="{{route('admin.subcategory.list')}}" class="mini-stat clearfix bg-primary">
                     <span class="mini-stat-icon"><i class="dripicons-document"></i></span>
                     <div class="mini-stat-info text-right text-white">
@@ -25,7 +25,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="col-md-6 col-lg-6 col-xl-4">
                 <a href="{{route('admin.pages.list')}}" class="mini-stat clearfix bg-primary">
                     <span class="mini-stat-icon"><i class="mdi mdi-blogger"></i></span>
                     <div class="mini-stat-info text-right text-white">
@@ -34,7 +34,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-md-6 col-lg-6 col-xl-3">
+            <div class="col-md-6 col-lg-6 col-xl-4">
                 <a href="{{route('admin.contact.list')}}" class="mini-stat clearfix bg-primary">
                     <span class="mini-stat-icon"><i class="fa fa-handshake-o"></i></span>
                     <div class="mini-stat-info text-right text-white">

@@ -65,8 +65,8 @@ class FrontEndController extends Controller
     */
     public function index()
     {
-        // $slider = Slider::orderBy('id','desc')->get();
-        // $intro = Intro::orderBy('id')->get();
+        $slider = Slider::orderBy('id','desc')->get();
+        $intro = Intro::orderBy('id')->get();
         // $chairmen = Chairmen::orderBy('id','desc')->get();
         // $banner = Banner::orderBy('id','desc')->get();
         // $blogs = Blog::where('status',1)->latest()->limit(5)->get();
@@ -80,7 +80,7 @@ class FrontEndController extends Controller
             return $category;
         });
         // dd($categories);
-        return view('web.index',compact('categories','client'));
+        return view('web.index',compact('categories','client','intro','slider'));
     }
 
     /** Show Page Details 

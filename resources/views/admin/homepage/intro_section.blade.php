@@ -31,7 +31,7 @@
                                         @enderror
                                     </div>
 
-                                    {{-- Service 2 --}}
+                                    {{-- Service 1 --}}
                                     <div class="col-md-12 col-sm-12 col-xs-12 mb-3">
                                         <hr>
                                         <h4 class="mt-0 header-title">Service 1</h4>
@@ -44,6 +44,8 @@
                                             <strong>{{ $errors->first('service_one') }}</strong>
                                         </span>
                                         @enderror
+                                    </div> 
+                                    <div class="col-md-6 col-sm-12 col-xs-12 mb-3">
                                         <label for="image">Write up</small></label>
                                         <textarea class="form-control" rows="6" name="service_one_description">{{$about->service_one_description}}</textarea>
                                         @if($errors->has('service_one_description'))
@@ -51,17 +53,7 @@
                                             <strong>{{ $errors->first('service_one_description') }}</strong>
                                         </span>
                                         @enderror
-                                    </div>
-                                    <div class="col-md-6 col-sm-12 col-xs-12 mb-3">
-                                        <label for="image">Image  <small style="color: red">(900*450 px)</small></label>
-                                        <input type="file" class="form-control m-b-10" name="service_one_image" accept="/*">
-                                        @if($errors->has('service_one_image'))
-                                        <span class="invalid-feedback" role="alert" style="color:red">
-                                            <strong>{{ $errors->first('service_one_image') }}</strong>
-                                        </span>
-                                        @enderror
-                                        <img src="{{ asset('images/index/thumb/'.$about->service_one_image) }}" alt="image" style="border-radius:5px;height:180px" class="img-responsive">
-                                    </div>  
+                                    </div> 
                                     
                                     {{-- Service 2 --}}
                                     <div class="col-md-12 col-sm-12 col-xs-12 mb-3">
@@ -76,6 +68,8 @@
                                             <strong>{{ $errors->first('service_two') }}</strong>
                                         </span>
                                         @enderror
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12 mb-3">
                                         <label for="image">Write up</small></label>
                                         <textarea class="form-control" rows="6" name="service_two_description">{{$about->service_two_description}}</textarea>
                                         @if($errors->has('service_two_description'))
@@ -83,16 +77,6 @@
                                             <strong>{{ $errors->first('service_two_description') }}</strong>
                                         </span>
                                         @enderror
-                                    </div>
-                                    <div class="col-md-6 col-sm-12 col-xs-12 mb-3">
-                                        <label for="image">Image  <small style="color: red">(900*450 px)</small></label>
-                                        <input type="file" class="form-control m-b-10" name="service_two_image" accept="/*">
-                                        @if($errors->has('service_two_image'))
-                                        <span class="invalid-feedback" role="alert" style="color:red">
-                                            <strong>{{ $errors->first('service_two_image') }}</strong>
-                                        </span>
-                                        @enderror
-                                        <img src="{{ asset('images/index/thumb/'.$about->service_two_image) }}" alt="image" style="border-radius:5px;height:180px" class="img-responsive">
                                     </div>
                                     
                                     {{-- Service 3 --}}
@@ -108,6 +92,8 @@
                                             <strong>{{ $errors->first('service_three') }}</strong>
                                         </span>
                                         @enderror
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12 mb-3">
                                         <label for="image">Write up</small></label>
                                         <textarea class="form-control" rows="6" name="service_three_description">{{$about->service_three_description}}</textarea>
                                         @if($errors->has('service_three_description'))
@@ -116,17 +102,32 @@
                                         </span>
                                         @enderror
                                     </div>
+
+                                    {{-- Service 4 --}}
+                                    <div class="col-md-12 col-sm-12 col-xs-12 mb-3">
+                                        <hr>
+                                        <h4 class="mt-0 header-title">Service 4</h4>
+                                    </div>
                                     <div class="col-md-6 col-sm-12 col-xs-12 mb-3">
-                                        <label for="image">Image  <small style="color: red">(900*450 px)</small></label>
-                                        <input type="file" class="form-control m-b-10" name="service_three_image" accept="/*">
-                                        @if($errors->has('service_three_image'))
+                                        <label for="image">Title</label>
+                                        <input type="text" class="form-control m-b-10" name="service_four"  value="{{$about->service_four}}">
+                                        @if($errors->has('service_four'))
                                         <span class="invalid-feedback" role="alert" style="color:red">
-                                            <strong>{{ $errors->first('service_three_image') }}</strong>
+                                            <strong>{{ $errors->first('service_four') }}</strong>
                                         </span>
                                         @enderror
-                                        <img src="{{ asset('images/index/thumb/'.$about->service_three_image) }}" alt="image" style="border-radius:5px;height:180px" class="img-responsive">
+                                    </div>
+                                    <div class="col-md-6 col-sm-12 col-xs-12 mb-3">
+                                        <label for="image">Write up</small></label>
+                                        <textarea class="form-control" rows="6" name="service_four_description">{{$about->service_four_description}}</textarea>
+                                        @if($errors->has('service_four_description'))
+                                        <span class="invalid-feedback" role="alert" style="color:red">
+                                            <strong>{{ $errors->first('service_four_description') }}</strong>
+                                        </span>
+                                        @enderror
                                     </div>
                                 </div>
+                                <hr />
                             </div>
                             <a href="{{route('admin.deshboard')}}" class="btn btn-primary waves-effect waves-light m-t-10">Go Back</a>
                             <button type="submit" class="btn btn-success waves-effect waves-light m-t-10">Submit</button>

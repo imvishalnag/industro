@@ -15,122 +15,17 @@
 
                                 <div id="rev_slider_26_1" class="rev_slider fullscreenbanner tiny_bullet_slider" style="display:none;" data-version="5.4.1">
                                     <ul>	
+                                        @foreach ($slider as $item)  
                                         <!-- SLIDE 1 -->
                                         <li data-index="rs-73" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide">
 
-                                        <!-- MAIN IMAGE -->
-                                        <img src="{{asset('web/images/main-slider/slider10/slide1-blur.jpg')}}" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg">
-                                        <!-- LAYERS -->
-                                        
-                                        <!-- LAYER 1 [ for overlay ] -->
-                                        <div class="tp-caption tp-shape tp-shapewrapper " 
-                                            id="slide-73-layer-1" 
-                                            data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
-                                            data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
-                                            data-width="full"
-                                            data-height="full"
-                                            data-whitespace="nowrap"
-                                            data-type="shape" 
-                                            data-basealign="slide" 
-                                            data-responsive_offset="off" 
-                                            data-responsive="off"
-                                            data-frames='[
-                                            {"from":"opacity:0;","speed":1000,"to":"o:1;","delay":0,"ease":"Power4.easeOut"},
-                                            {"delay":"wait","speed":1000,"to":"opacity:0;","ease":"Power4.easeOut"}
-                                            ]'
-                                            data-textAlign="['left','left','left','left']"
-                                            data-paddingtop="[0,0,0,0]"
-                                            data-paddingright="[0,0,0,0]"
-                                            data-paddingbottom="[0,0,0,0]"
-                                            data-paddingleft="[0,0,0,0]"
-                                            
-                                            style="z-index:2;background-color:rgba(0, 0, 0, 0.5);border-color:rgba(0, 0, 0, 0);border-width:0px;"> 
-                                        </div>  
-
-                                        <!-- LAYER NR. 2 -->
-                                        <div class="tp-caption   tp-resizeme" 
-                                            id="slide-73-layer-2" 
-                                            data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
-                                            data-y="['middle','middle','middle','middle']" data-voffset="['-150','-150','-200','-200']" 
-                                            data-width="['650','650','620','380']"
-                                            data-height="none"
-                                            data-whitespace="normal"
-                                    
-                                            data-type="text" 
-                                            data-responsive_offset="on" 
-                                    
-                                            data-frames='[{"delay":300,"speed":750,"sfxcolor":"#ddd","sfx_effect":"blockfromleft","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},
-                                            {"delay":"wait","speed":500,"sfxcolor":"#ffffff","sfx_effect":"blocktoleft","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
-                                            data-textAlign="['left','left','center','center']"
-                                            data-paddingtop="[10,10,10,10]"
-                                            data-paddingright="[20,20,20,20]"
-                                            data-paddingbottom="[10,10,10,10]"
-                                            data-paddingleft="[20,20,20,20]"
-                                    
-                                            style="z-index: 7; font-size: 24px; line-height: 24px; font-weight: 600; color: #ffffff; letter-spacing: 4px;font-family: 'Teko', sans-serif;">High Performance</div>
-                                    
-                                        <!-- LAYER NR. 3 -->
-                                        <div class="tp-caption   tp-resizeme" 
-                                            id="slide-73-layer-3" 
-                                            data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
-                                            data-y="['middle','middle','middle','middle']" data-voffset="['0','0','-100','-120']" 
-                                            data-fontsize="['100','100','60','40']"
-                                            data-lineheight="['100','100','60','40']"
-                                            data-width="['700','650','620','380']"
-                                            data-height="none"
-                                            data-whitespace="normal"
-                                    
-                                            data-type="text" 
-                                            data-responsive_offset="on" 
-                                    
-                                            data-frames='[{"delay":200,"speed":750,"sfxcolor":"#ddd","sfx_effect":"blockfromleft","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},
-                                            {"delay":"wait","speed":500,"sfxcolor":"#ffffff","sfx_effect":"blocktoleft","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
-                                            data-textAlign="['left','left','center','center']"
-                                            data-paddingtop="[20,20,20,20]"
-                                            data-paddingright="[20,20,20,20]"
-                                            data-paddingbottom="[30,30,30,30]"
-                                            data-paddingleft="[20,20,20,20]"
-                                    
-                                            style="z-index: 8;  font-weight: 800; color: #ffffff; font-family: 'Teko', sans-serif;">Product Name <br /> One
-                                        </div>                             
-
-                                        <!-- LAYER NR. 5 -->
-                                        <div class="tp-caption   tp-resizeme rs-parallaxlevel-2" 
-                                            id="slide-73-layer-5" 
-                                            data-x="['center','center','center','center']" data-hoffset="['500','500','0','0']" 
-                                            data-y="['middle','middle','bottom','bottom']" data-voffset="['0','0','50','50']" 
-                                            data-width="none"
-                                            data-height="none"
-                                            data-whitespace="nowrap"
-                                    
-                                            data-type="image" 
-                                            data-responsive_offset="on" 
-                                    
-                                            data-frames='[{"delay":400,"speed":750,"sfxcolor":"#000","sfx_effect":"blockfromleft","frame":"0","from":"z:0;","to":"o:1;","ease":"Power3.easeInOut"},
-                                            {"delay":"wait","speed":500,"sfxcolor":"#ffffff","sfx_effect":"blocktoleft","frame":"999","to":"z:0;","ease":"Power4.easeOut"}]'
-                                            data-textAlign="['inherit','inherit','inherit','inherit']"
-                                            data-paddingtop="[0,0,0,0]"
-                                            data-paddingright="[0,0,0,0]"
-                                            data-paddingbottom="[0,0,0,0]"
-                                            data-paddingleft="[0,0,0,0]"
-                                    
-                                            style="z-index: 6;">
-                                            <img src="{{asset('web/images/main-slider/slider10/slide1.jpg')}}" alt="" data-ww="['1000px','1000px','800px','500px']" data-hh="['480px','480px','450','281']" width="1200" height="675" data-no-retina>
-                                        </div>
-                                    
-
-                                        </li>
-
-                                        <!-- SLIDE 2 -->
-                                        <li data-index="rs-74" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide">
-
                                             <!-- MAIN IMAGE -->
-                                            <img src="{{asset('web/images/main-slider/slider10/slide2-blur.jpg')}}" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg">
+                                            <img src="{{asset('web/images/main-slider/slider10/slide1-blur.jpg')}}" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg">
                                             <!-- LAYERS -->
                                             
                                             <!-- LAYER 1 [ for overlay ] -->
                                             <div class="tp-caption tp-shape tp-shapewrapper " 
-                                                id="slide-74-layer-1" 
+                                                id="slide-73-layer-1" 
                                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
                                                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
                                                 data-width="full"
@@ -155,7 +50,7 @@
 
                                             <!-- LAYER NR. 2 -->
                                             <div class="tp-caption   tp-resizeme" 
-                                                id="slide-74-layer-2" 
+                                                id="slide-73-layer-2" 
                                                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
                                                 data-y="['middle','middle','middle','middle']" data-voffset="['-150','-150','-200','-200']" 
                                                 data-width="['650','650','620','380']"
@@ -173,11 +68,12 @@
                                                 data-paddingbottom="[10,10,10,10]"
                                                 data-paddingleft="[20,20,20,20]"
                                         
-                                                style="z-index: 7; font-size: 24px; line-height: 24px; font-weight: 600; color: #ffffff; letter-spacing: 4px;font-family: 'Teko', sans-serif;">High Performance</div>
-                                        
+                                                style="z-index: 7; font-size: 24px; line-height: 24px; font-weight: 600; color: #ffffff; letter-spacing: 4px;font-family: 'Teko', sans-serif;">{{$item->small_text}}
+                                            </div>                                        
+
                                             <!-- LAYER NR. 3 -->
                                             <div class="tp-caption   tp-resizeme" 
-                                                id="slide-74-layer-3" 
+                                                id="slide-73-layer-3" 
                                                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
                                                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','-100','-120']" 
                                                 data-fontsize="['100','100','60','40']"
@@ -197,12 +93,12 @@
                                                 data-paddingbottom="[30,30,30,30]"
                                                 data-paddingleft="[20,20,20,20]"
                                         
-                                                style="z-index: 8;  font-weight: 800; color: #ffffff; font-family: 'Teko', sans-serif;">Product Name <br /> Two
-                                            </div>                                        
-                                                                        
+                                                style="z-index: 8;  font-weight: 800; color: #ffffff; font-family: 'Teko', sans-serif;">{{$item->big_text}}
+                                            </div>                             
+
                                             <!-- LAYER NR. 5 -->
                                             <div class="tp-caption   tp-resizeme rs-parallaxlevel-2" 
-                                                id="slide-74-layer-5" 
+                                                id="slide-73-layer-5" 
                                                 data-x="['center','center','center','center']" data-hoffset="['500','500','0','0']" 
                                                 data-y="['middle','middle','bottom','bottom']" data-voffset="['0','0','50','50']" 
                                                 data-width="none"
@@ -221,11 +117,10 @@
                                                 data-paddingleft="[0,0,0,0]"
                                         
                                                 style="z-index: 6;">
-                                                <img src="{{asset('web/images/main-slider/slider10/slide2.jpg')}}" alt="" data-ww="['1000px','1000px','800px','500px']" data-hh="['480px','480px','450','281']" width="1200" height="675" data-no-retina>
-                                            </div>
-                                        
-
-                                        </li>                                        
+                                                <img src="{{asset('web/images/main-slider/slider10/slide1.jpg')}}" alt="" data-ww="['1000px','1000px','800px','500px']" data-hh="['480px','480px','450','281']" width="1200" height="675" data-no-retina>
+                                            </div>    
+                                        </li> 
+                                        @endforeach                                    
 
                                     </ul>
                                     <div class="tp-bannertimer" style="height: 10px; background: rgba(0, 0, 0, 0.15);"></div>	
@@ -248,70 +143,71 @@
                             
                                 <div class="col-lg-6 col-md-12 m-b30">
                                     <!-- Accordian -->
+                                    @foreach ($intro as $item)  
                                     <div class="wt-accordion acc-bg-gray m-b50 about-section-three-acc" id="accordion">
                                         <div class="panel wt-panel">
                                             <div class="acod-head acc-actives" id="headingOne">
-                                            <h5 class="acod-title">
-                                                <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                                Test & Measurement
-                                                <span class="indicator"><i class="fa"></i></span>
-                                                </a>
-                                            </h5>
+                                                <h5 class="acod-title">
+                                                    <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                        {{$item->service_one}}
+                                                        <span class="indicator"><i class="fa"></i></span>
+                                                    </a>
+                                                </h5>
                                             </div>
                                         
                                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
-                                            <div class="acod-content p-tb15">
-                                                We Are Proudly Providing Services Since 1995
-                                                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed.
-                                            </div>
+                                                <div class="acod-content p-tb15">
+                                                    {{$item->service_one_description}}
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="panel wt-panel">
                                             <div class="acod-head" id="headingTwo">
-                                            <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    Calibration Services
-                                                <span class="indicator"><i class="fa"></i></span>
-                                                </a>
-                                            </h5>
+                                                <h5 class="mb-0">
+                                                    <a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                        {{$item->service_two}}
+                                                        <span class="indicator"><i class="fa"></i></span>
+                                                    </a>
+                                                </h5>
                                             </div>
                                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                                            <div class="acod-content p-tb15">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                            </div>
+                                                <div class="acod-content p-tb15">
+                                                    {{$item->service_two_description}}
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="panel wt-panel">
                                             <div class="acod-head" id="headingThree">
-                                            <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                Instrumentation
-                                                <span class="indicator"><i class="fa"></i></span>
-                                                </a>
-                                            </h5>
+                                                <h5 class="mb-0">
+                                                    <a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                        {{$item->service_three}}
+                                                    <span class="indicator"><i class="fa"></i></span>
+                                                    </a>
+                                                </h5>
                                             </div>
                                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                                            <div class="acod-content p-tb15">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                            </div>
+                                                <div class="acod-content p-tb15">
+                                                    {{$item->service_three_description}}
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="panel wt-panel">
                                             <div class="acod-head" id="headingFour">
-                                            <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                Line & Substation Services
-                                                <span class="indicator"><i class="fa"></i></span>
-                                                </a>
-                                            </h5>
+                                                <h5 class="mb-0">
+                                                    <a class="collapsed" data-toggle="collapse" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                        {{$item->service_four}}
+                                                        <span class="indicator"><i class="fa"></i></span>
+                                                    </a>
+                                                </h5>
                                             </div>
                                             <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                                                 <div class="acod-content p-tb15">
-                                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                    {{$item->service_four_description}}
                                                 </div>
                                             </div>
                                         </div>
                                     </div>  
+                                    @endforeach
                                 </div> 
                                                     
                                 <div class="col-lg-6 col-md-12 m-b30">
@@ -330,13 +226,13 @@
                                     
                                          <!-- Accordian -->
                                         <div class="">
-                                            <p>
-                                                HD Engineering an ISO 9001:2015 Certified Company was incorporated in 2018 to become the India's first organisation in North Eastern Region to Manufacture Test & Measurements products for energy sector. We owe our success to the confidence with which our customers approach us for the highest quality solutions.
-                                            </p>
+                                            @foreach ($intro as $item)
+                                                {!! $item->description !!}
+                                            @endforeach
                                         </div>                                    
 
                                         <div class="ab-three-info d-flex justify-content-between">
-                                            <div class="welcom-btn-position m-t20"><a href="about-1.html" class="site-button site-btn-effect">More About</a></div>
+                                            <div class="welcom-btn-position m-t20"><a href="{{route('web.about')}}" class="site-button site-btn-effect">More About</a></div>
                                         </div>
                                                                     
                                     </div>

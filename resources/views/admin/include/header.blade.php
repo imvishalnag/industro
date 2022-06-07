@@ -119,8 +119,8 @@
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-settings"></i><span>Homepage Settings</span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="#">Homepage About</a></li>
-                                    <li><a href="#">Homepage Service</a></li>
+                                    <li><a href="{{route('admin.intro_view')}}"> Homepage Intro</a></li>
+                                    <li><a href="{{route('admin.webSliderList')}}"> Homepage Slider</a></li>
                                     <li><a href="{{route('admin.client.list')}}">Client</a></li>
                                 </ul>
                             </li>  

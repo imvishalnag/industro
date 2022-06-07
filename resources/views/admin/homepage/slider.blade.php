@@ -24,22 +24,28 @@
                                 <tr>
                                     <th>Sl</th>
                                     <th>Slider Image</th>
-                                    <th>Status</th>
+                                    <th>Small Text</th>
+                                    <th>Big Text</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @if (isset($slider) && !empty($slider))
                                 @foreach($slider as $items)    
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td> <img src="{{ asset('images/banner/thumb/'.$items->image) }}" alt="image" height="200px" class="img-responsive"></td>
-                                        <td>{{$items->description}}</td>
+                                        <td> <img src="{{ asset('images/banner/thumb/'.$items->image) }}" alt="image" height="100px" class="img-responsive"></td>
+                                        <td>{{$items->small_text}}</td>
+                                        <td>{{$items->big_text}}</td>
                                         <td><a href="{{route('admin.slider_delete', ['id'=>$items->id])}}" class="btn btn-danger">Delete</a></td>
                                     </tr>
                                 @endforeach   
+                                    
+                                @else
                                 <tr>
                                     <td colspan="4" class="text-center"> No slider</td>
-                                </tr>
+                                </tr>                                    
+                                @endif
                             </tbody>
                         </table>
 

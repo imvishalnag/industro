@@ -249,6 +249,16 @@ Route::group(['namespace' => 'Admin'],function(){
         Route::post('/product_writeup/edit/',[KnowledgeController::class,'productWriteupupupdatePost'])->name('admin.product_writeup_edit');
         Route::get('/white_paper/view/',[KnowledgeController::class,'whitePapersinglePost'])->name('admin.white_paper_view');
         Route::post('/white_paper/edit/',[KnowledgeController::class,'whitePaperupdatePost'])->name('admin.white_paper_edit');
+        
+        // Intro
+        Route::get('/intro/view/',[IntroController::class,'singlePost'])->name('admin.intro_view');
+        Route::post('/intro/edit/',[IntroController::class,'updatePost'])->name('admin.intro_edit');
+        
+        // slider
+        Route::get('/slider/list',[SliderController::class,'webSliderList'])->name('admin.webSliderList');
+        Route::get('/slider/add/form', [SliderController::class,'webSliderAddForm'])->name('admin.web_slider_add_form');
+        Route::post('/slider/insert/form', [SliderController::class,'insertWebSlider'])->name('admin.insert_web_slider');
+        Route::get('/delete/slider/{id}',[SliderController::class,'deletePost'])->name('admin.slider_delete');
     });
 });
 

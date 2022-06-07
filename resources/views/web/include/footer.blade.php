@@ -46,10 +46,9 @@
                                     <div class="widget widget_services">
                                         <h3 class="widget-title">Additional links</h3>
                                         <ul>
-                                            <li><a href="#">Case Study</a></li>                                        
-                                            <li><a href="#">Application Note</a></li>
-                                            <li><a href="#">Product Writeup</a></li>
-                                            <li><a href="#">White Paper</a></li>   
+                                            @foreach ($header_data['knowledge'] as $item)
+                                            <li><a href="{{route('web.knowledge',['slug'=> $item->name, 'id'=> $item->id ])}}">{{$item->name}}</a></li>
+                                            @endforeach   
                                             <li><a href="#">Feedback</a></li>   
                                         </ul>
                                     </div>

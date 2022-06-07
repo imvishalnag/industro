@@ -33,18 +33,20 @@ class IntroController extends Controller
         $all_service_two_description = $request->input('service_two_description');
         $all_service_three = $request->input('service_three');
         $all_service_three_description = $request->input('service_three_description'); 
+        $all_service_four = $request->input('service_four');
+        $all_service_four_description = $request->input('service_four_description'); 
 
         $id = 1;
         $about = Intro::find($id);
-        if($request->has('service_one_image')){
-            $about->service_one_image = $this->addUspImages($request->file('service_one_image'));
-        }
-        if($request->has('service_two_image')){
-            $about->service_two_image = $this->addUspImages($request->file('service_two_image'));
-        }
-        if($request->has('service_three_image')){
-            $about->service_three_image = $this->addUspImages($request->file('service_three_image'));
-        }
+        // if($request->has('service_one_image')){
+        //     $about->service_one_image = $this->addUspImages($request->file('service_one_image'));
+        // }
+        // if($request->has('service_two_image')){
+        //     $about->service_two_image = $this->addUspImages($request->file('service_two_image'));
+        // }
+        // if($request->has('service_three_image')){
+        //     $about->service_three_image = $this->addUspImages($request->file('service_three_image'));
+        // }
 
         $about->description = $long_desc; 
         $about->service_one = $all_service_one;
@@ -53,6 +55,8 @@ class IntroController extends Controller
         $about->service_two_description  = $all_service_two_description ;
         $about->service_three = $all_service_three;
         $about->service_three_description = $all_service_three_description;
+        $about->service_four = $all_service_four;
+        $about->service_four_description = $all_service_four_description;
         if($about->save()){
             return redirect()->back()->with('message', 'Post Updated Successfully!');
         }else {

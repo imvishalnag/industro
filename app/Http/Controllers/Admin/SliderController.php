@@ -24,11 +24,13 @@ class SliderController extends Controller
 
     public function insertWebSlider(Request $request){
         $this->validate($request, [
-            'description' => 'required',
+            'small_text' => 'required',
+            'big_text' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
         $chairmen = new Slider();
-        $long_desc = $request->input('description');
+        $small_text = $request->input('small_text');
+        $big_text = $request->input('big_text');
         if($request->hasfile('image'))
         {
             $image = $request->file('image');
@@ -44,7 +46,8 @@ class SliderController extends Controller
         }
         // $id = 1;
         // $chairmen = Chairmen::find($id);
-        $chairmen->description = $long_desc;  
+        $chairmen->small_text = $small_text;  
+        $chairmen->big_text = $big_text;  
         $chairmen->image = $image_name;  
         if($chairmen->save()){
             return redirect()->back()->with('message', 'Post Updated Successfully!');
