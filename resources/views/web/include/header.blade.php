@@ -126,7 +126,7 @@
                             </div>
                             <div class="icon-content">
                                 <strong>India's First Manufacturing & High Voltage Calibration Setup in North-Eastern Region</strong>
-                                <span>ISO Certified Company 9001-2020</span>
+                                <span>ISO Certified Company 9001-2015</span>
                             </div>
                         </li>
                         <!-- <li>
