@@ -75,6 +75,16 @@
                                             </div>
                                         @enderror
                                     </div>
+                                    <div class="col-sm-6">
+                                        <label for="name" >Catalog</label>                                        
+                                        <input type="file" class="form-control m-b-10" name="catalog" />
+                                        
+                                        @if($errors->has('name'))
+                                            <div class="alert alert-danger" role="alert">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </div>
+                                        @enderror
+                                    </div>
                                 </div>
 
                                 <div class="form-group row">

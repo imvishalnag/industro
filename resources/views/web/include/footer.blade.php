@@ -2,7 +2,7 @@
         <footer class="site-footer footer-large footer-dark text-white" >        
             <!-- FOOTER BLOCKES START -->  
             <div class="footer-top bg-no-repeat bg-bottom-right" style="background-image:url(images/background/footer-bg.png)">
-                <div class="container">
+                <div class="container-fluid">
                     <div class="row">
                     
                         <div class="col-lg-5 col-md-12 col-sm-12"> 
@@ -75,13 +75,13 @@
             <!-- FOOTER COPYRIGHT -->
             
             <div class="footer-bottom">
-              <div class="container">
-                <div class="wt-footer-bot-left d-flex justify-content-between">
+              <div class="container-fluid">
+                <div class="wt-footer-bot-left d-flex justify-content-center">
                     <span class="copyrights-text">Copyright © 2022 <span class="site-text-primary">HD Engineering </span> | Designed and Developed By <a href="https://softnue.com/" target="_blank"><span class="site-text-primary">Softnue </span> </a></span>
-                    <ul class="copyrights-nav"> 
-                        {{-- <li><a href="javascript:void(0);">Terms  &amp; Condition</a></li>
-                        <li><a href="javascript:void(0);">Privacy Policy</a></li> --}}
-                        <li><a href="contact-1.html">Contact Us</a></li>
+                    {{-- <ul class="copyrights-nav"> 
+                        <li><a href="javascript:void(0);">Terms  &amp; Condition</a></li>
+                        <li><a href="javascript:void(0);">Privacy Policy</a></li> 
+                        <li><a href="contact-1.html">Contact Us</a></li>--}}
                     </ul>     
                 </div>
               </div>   

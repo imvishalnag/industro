@@ -17,7 +17,7 @@
                                     <ul>	
                                         @foreach ($slider as $item)  
                                         <!-- SLIDE 1 -->
-                                        <li data-index="rs-73" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide">
+                                        <li data-index="rs-{{$loop->iteration}}" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="default" data-easeout="default" data-masterspeed="300"  data-thumb=""  data-rotate="0"  data-saveperformance="off"  data-title="Slide">
 
                                             <!-- MAIN IMAGE -->
                                             <img src="{{asset('web/images/main-slider/slider10/slide1-blur.jpg')}}" alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg">
@@ -25,7 +25,7 @@
                                             
                                             <!-- LAYER 1 [ for overlay ] -->
                                             <div class="tp-caption tp-shape tp-shapewrapper " 
-                                                id="slide-73-layer-1" 
+                                                id="slide-{{$loop->iteration}}-layer-1" 
                                                 data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
                                                 data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
                                                 data-width="full"
@@ -50,9 +50,9 @@
 
                                             <!-- LAYER NR. 2 -->
                                             <div class="tp-caption   tp-resizeme" 
-                                                id="slide-73-layer-2" 
+                                                id="slide-{{$loop->iteration}}-layer-2" 
                                                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
-                                                data-y="['middle','middle','middle','middle']" data-voffset="['-150','-150','-200','-200']" 
+                                                data-y="['middle','middle','middle','middle']" data-voffset="['-250','-250','-300','-300']" 
                                                 data-width="['650','650','620','380']"
                                                 data-height="none"
                                                 data-whitespace="normal"
@@ -73,9 +73,9 @@
 
                                             <!-- LAYER NR. 3 -->
                                             <div class="tp-caption   tp-resizeme" 
-                                                id="slide-73-layer-3" 
+                                                id="slide-{{$loop->iteration}}-layer-3" 
                                                 data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
-                                                data-y="['middle','middle','middle','middle']" data-voffset="['0','0','-100','-120']" 
+                                                data-y="['middle','middle','middle','middle']" data-voffset="['-100','-100','-200','-220']" 
                                                 data-fontsize="['100','100','60','40']"
                                                 data-lineheight="['100','100','60','40']"
                                                 data-width="['700','650','620','380']"
@@ -98,9 +98,9 @@
 
                                             <!-- LAYER NR. 5 -->
                                             <div class="tp-caption   tp-resizeme rs-parallaxlevel-2" 
-                                                id="slide-73-layer-5" 
+                                                id="slide-{{$loop->iteration}}-layer-5" 
                                                 data-x="['center','center','center','center']" data-hoffset="['500','500','0','0']" 
-                                                data-y="['middle','middle','bottom','bottom']" data-voffset="['0','0','50','50']" 
+                                                data-y="['middle','middle','bottom','bottom']" data-voffset="['-100','-100','50','50']" 
                                                 data-width="none"
                                                 data-height="none"
                                                 data-whitespace="nowrap"
@@ -117,7 +117,7 @@
                                                 data-paddingleft="[0,0,0,0]"
                                         
                                                 style="z-index: 6;">
-                                                <img src="{{asset('web/images/main-slider/slider10/slide1.jpg')}}" alt="" data-ww="['1000px','1000px','800px','500px']" data-hh="['480px','480px','450','281']" width="1200" height="675" data-no-retina>
+                                                <img src="{{ asset('images/banner/'.$item->image.'') }}" alt="" data-ww="['1000px','1000px','800px','500px']" data-hh="['480px','480px','450','281']" width="1200" height="675" data-no-retina>
                                             </div>    
                                         </li> 
                                         @endforeach                                    
@@ -137,7 +137,7 @@
             <!-- ABOUT ONE SECTION START -->
             <div class="section-full p-t80 p-b0 bg-no-repeat bg-center bg-white">
                 <div class="about-section-three">
-                    <div class="container">
+                    <div class="container-fluid">
                         <div class="section-content">                 
                             <div class="row justify-content-center d-flex">
                             
@@ -310,7 +310,7 @@
                                    
             <!-- CLIENT LOGO SECTION START -->
             @if(isset($client) && $client->count() > 0 )
-            <div class="section-full bg-gray p-tb20">
+            <div class="section-full bg-gray">
                 <div class="container-fluid">
                     <div class="section-content">
                         <!-- TESTIMONIAL 4 START ON BACKGROUND -->   

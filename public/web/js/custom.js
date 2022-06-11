@@ -635,7 +635,7 @@ function projects_carousel2(){
 				items:4,
 			},
 			1000:{
-				items:6
+				items:7
 			}
 		}
 	});

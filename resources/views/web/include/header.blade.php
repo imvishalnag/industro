@@ -83,9 +83,14 @@
             </div> <!-- END Search -->    
         
             <div class="top-bar site-bg-secondry">
-                <div class="container">
+                <div class="container-fluid">
 
                         <div class="d-flex justify-content-between">
+                            <div class="wt-topbar-left d-flex flex-wrap align-content-start">
+                                <ul class="wt-topbar-info e-p-bx text-white">
+                                    <li><span> Monday - Saturday</span><span>9:30 AM - 7:00 PM</span></li>
+                                </ul>
+                            </div>
                             <div class="wt-topbar-left d-flex flex-wrap align-content-start">
                                 <ul class="wt-topbar-info e-p-bx text-white">
                                     <li><span> Monday - Saturday</span><span>9:30 AM - 7:00 PM</span></li>
@@ -104,7 +109,7 @@
                 </div>
             </div>                          
 
-            <div class="container header-middle clearfix">
+            <div class="container-fluid header-middle clearfix">
                 <div class="logo-header">
                     <div class="logo-header-inner logo-header-one">
                         <a href="{{route('web.index')}}">
@@ -142,7 +147,7 @@
                        
             <div class="sticky-header main-bar-wraper  navbar-expand-lg">
                 <div class="main-bar">                       
-                    <div class="container clearfix">                       
+                    <div class="container-fluid clearfix">                       
                         <!-- NAV Toggle Button -->
                         <button id="mobile-side-drawer" data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggler collapsed">
                             <span class="sr-only">Toggle navigation</span>
