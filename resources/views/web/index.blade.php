@@ -135,7 +135,7 @@
             <!-- SLIDER END --> 
            
             <!-- ABOUT ONE SECTION START -->
-            <div class="section-full p-t80 p-b0 bg-no-repeat bg-center bg-white">
+            <div class="section-full p-t50 p-b0 bg-no-repeat bg-center bg-white">
                 <div class="about-section-three">
                     <div class="container-fluid">
                         <div class="section-content">                 
