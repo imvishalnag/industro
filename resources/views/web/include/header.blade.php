@@ -85,7 +85,7 @@
             <div class="top-bar site-bg-secondry">
                 <div class="container-fluid">
 
-                        <div class="d-flex justify-content-between">
+                        <div class="d-flex justify-content-end">
                             <div class="wt-topbar-left d-flex flex-wrap align-content-start">
                                 <ul class="wt-topbar-info e-p-bx text-white">
                                     <li><span> Monday - Saturday</span><span>9:30 AM - 7:00 PM</span></li>
@@ -93,7 +93,10 @@
                             </div>
                             <div class="wt-topbar-left d-flex flex-wrap align-content-start">
                                 <ul class="wt-topbar-info e-p-bx text-white">
-                                    <li><span> Monday - Saturday</span><span>9:30 AM - 7:00 PM</span></li>
+                                    <li style="border-color: transparent">
+                                        <span style="opacity: 0"> Monday - Saturday</span>
+                                        <span style="opacity: 0">9:30 AM - 7:00 PM</span>
+                                    </li>
                                     <li><i class="fa fa-phone"></i>0361 6774480 / 9101177485</li>
                                     <li><i class="fa fa-envelope"></i>info@hdtnm.com</li>
                                 </ul>

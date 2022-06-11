@@ -9424,9 +9424,9 @@ cursor: pointer;}
 
 .header-style-1 .top-bar .container{position:relative;}
 
-.header-style-1 .top-bar .wt-topbar-info li{display: inline-block; margin-right: 0px; padding: 12px 15px 12px 15px; border-right: 1px solid rgba(255,255,255,0.6);}
+.header-style-1 .top-bar .wt-topbar-info li{display: inline-block;margin-right: 0px;padding: 12px 15px 12px 15px;border-right: 1px solid rgba(255,255,255,0.6);}
 .header-style-1 .top-bar .wt-topbar-info li:first-child{position:relative; z-index:1;}
-.header-style-1 .top-bar .wt-topbar-info li:first-child:before{transform: skewX(-20deg) translateX(9px);content:''; position: absolute; right: 0px; top: -2px; background-color: #ffffff!important; z-index: -1; width: 6000px; bottom: 0px;}
+.header-style-1 .top-bar .wt-topbar-info li:first-child:before{transform: skewX(-38deg) translateX(9px);content:'';position: absolute;right: 75px;top: -2px;background-color: #ffffff!important;z-index: -1;width: 6000px;bottom: 0px;}
 
 .header-style-1 .top-bar .wt-topbar-info li span{display:inline-block; padding-right:10px;}
 .header-style-1 .top-bar .wt-topbar-info li i{margin-right:10px; font-size: 20px;padding-left: 30px;}
