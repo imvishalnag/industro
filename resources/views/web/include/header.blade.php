@@ -129,7 +129,7 @@
                             </div>
                             <div class="icon-content">
                                 <strong>India's First Manufacturing & High Voltage Calibration Setup in North-Eastern Region</strong>
-                                <span>ISO Certified Company 9001-2015</span>
+                                <span>ISO 9001:2015 Certified Company</span>
                             </div>
                         </li>
                         <!-- <li>
