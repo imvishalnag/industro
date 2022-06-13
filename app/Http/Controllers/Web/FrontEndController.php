@@ -31,6 +31,7 @@ use App\Models\East;
 use App\Models\Faq;
 use App\Models\Health;
 use App\Models\HomeService;
+use App\Models\HomeProduct;
 use App\Models\Idea;
 use App\Models\Investor;
 use App\Models\Innovation;
@@ -71,7 +72,7 @@ class FrontEndController extends Controller
         // $banner = Banner::orderBy('id','desc')->get();
         // $blogs = Blog::where('status',1)->latest()->limit(5)->get();
         // $service = HomeService::orderBy('id')->get();
-        // $about = About::where(id,'id')->get();
+        $home_product = HomeProduct::where('status',1)->orderBy('id')->get();
         $client = Client::orderBy('id')->get();
         $categories = Category::with('subcategory')->withCount('subcategory')->get()->map(function($category){
             $category->subcategory->map(function($subcategory){
@@ -80,7 +81,7 @@ class FrontEndController extends Controller
             return $category;
         });
         // dd($categories);
-        return view('web.index',compact('categories','client','intro','slider'));
+        return view('web.index',compact('categories','client','intro','slider','home_product'));
     }
 
     /** Show Page Details 

@@ -83,9 +83,9 @@
                             <div class="wt-product-text">
                                 <p>{{$page->short_description}}</p> 
                             </div>
-                            <div class="cart clearfix ">
-                                <button class="site-button-secondry m-r10 site-btn-effect m-b20"><i class="fa fa-shopping-bag"></i> Catalog</button>
-                                <button class="site-button site-btn-effect m-b20"><i class="fa fa-cart-plus"></i> Get In Touch</button>
+                            <div class="cart clearfix d-flex">
+                                <button class="site-button-secondry m-r10 site-btn-effect m-b20">View Catalog</button>
+                                <a class="site-button site-btn-effect m-b20" href="tel:0361 6774480"><i class="fa fa-phone"></i> Call Us : 0361 6774480</a>
                             </div>
                             <div class="product_meta"> 
                                 <span class="posted_in">

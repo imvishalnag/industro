@@ -248,6 +248,52 @@
             </div>   
             <!-- ABOUT ONE SECTION END -->    
 
+            <!-- OUR TEAM START -->
+            <div class="section-full p-t80 p-b50 bg-white arc2-team-wrapper">
+                <div class="container">
+                    <div class="section-content">
+                    
+                    <!-- TITLE START-->
+                    <div class="section-head center wt-small-separator-outer text-center">
+                        <div class="wt-small-separator site-text-primary">
+                            <div  class="sep-leaf-left"></div>
+                            <div>Our Product</div>
+                            <div  class="sep-leaf-right"></div>
+                        </div>
+                        <h2>We will serve you with the best of our product by expert team</h2>
+                    </div>
+                    <!-- TITLE END-->
+                               
+                    <div class="section-content">
+                        <div class="row justify-content-center">
+                            
+                            @foreach ($home_product as $items)
+                            <div class="col-lg-4 col-md-6 col-sm-6 m-b30 home_product_img">
+                            	<a class="wt-team-arc2 wt-team-arc2-no-border" href="{{route('web.catagory.sub-catagory',['catslug'=>'Product','slug'=>$items->page->name,'page_id'=>$items->product_id])}}">
+                                	
+                                    <div class="wt-media">
+                                        <img src="{{ asset('backend_images/'.$items->page->image) }}" alt="">                                                
+                                    </div>                                   
+
+                                    <div class="wt-info bg-gray-light p-a20">
+                                        <div class="team-detail  text-center">
+                                            <h4 class="m-t0">{{$items->page->name}}</h4>
+                                            <p>{{$items->subcategory->name}}</p>
+                                        </div>
+                                    </div>
+                            
+                                </a>
+                            </div>                                                                                 
+                            @endforeach                            
+                                
+                        </div>
+                    </div>      
+                        
+                    </div>
+                </div>
+            </div>   
+            <!-- OUR TEAM SECTION END -->
+
             {{-- <!-- QUALITY SECTION START -->
             <div class="section-full p-b30 ">
                 <div class="container">

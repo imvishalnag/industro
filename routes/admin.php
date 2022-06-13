@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\BlogsController;
 use App\Http\Controllers\Admin\DoctorAppointmentController;
 use App\Http\Controllers\Admin\DistributorController;
+use App\Http\Controllers\Admin\HomeProductController;
 use App\Http\Controllers\Admin\InquiryController;
 use App\Http\Controllers\Admin\KnowledgeController;
 use App\Http\Controllers\Admin\ReviewController;
@@ -252,13 +253,21 @@ Route::group(['namespace' => 'Admin'],function(){
         
         // Intro
         Route::get('/intro/view/',[IntroController::class,'singlePost'])->name('admin.intro_view');
-        Route::post('/intro/edit/',[IntroController::class,'updatePost'])->name('admin.intro_edit');
+        Route::post('/intro/edit/',[IntroController::class,'updatePost'])->name('admin.intro_edit');        
         
         // slider
         Route::get('/slider/list',[SliderController::class,'webSliderList'])->name('admin.webSliderList');
         Route::get('/slider/add/form', [SliderController::class,'webSliderAddForm'])->name('admin.web_slider_add_form');
         Route::post('/slider/insert/form', [SliderController::class,'insertWebSlider'])->name('admin.insert_web_slider');
         Route::get('/delete/slider/{id}',[SliderController::class,'deletePost'])->name('admin.slider_delete');
+
+        // Product
+        Route::get('/product/view/',[HomeProductController::class,'homeProductPost'])->name('admin.home_product_view');
+        Route::get('/product/status/update/{id}/{status}',[HomeProductController::class,'homeProductStatusUpdate'])->name('admin.home_product_status_update');
+        Route::get('/product/edit/{id}',[HomeProductController::class,'homeProductEdit'])->name('admin.home_product_edit');
+        Route::get('/product/find/{sub_cat_id}',[HomeProductController::class,'findProduct'])->name('admin.find.product');
+        Route::post('/product/update/{id}',[HomeProductController::class,'homeProductUpdate'])->name('admin.home_product_update');
+        // Route::post('/product/add',[HomeProductController::class,'homeProductAdd'])->name('admin.home_product_add');
     });
 });
 

@@ -18666,3 +18666,15 @@ background: linear-gradient(0deg, rgba(255,94,21,1) 0%, rgba(0,23,60,1) 100%);
 .sub-item li {
 	display: block;
 }
+.home_product_img img {
+	width: 100%;
+}
+.home_product_img .wt-team-arc2 {
+    display: block;
+    border: 1px solid #fff;
+}
+.home_product_img:hover .wt-team-arc2 {
+    display: block;
+    box-shadow: 0 0 11px 0 #ff00006b;
+    border-color: #f00;
+}
