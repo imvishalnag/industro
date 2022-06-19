@@ -17,7 +17,7 @@
                 </div>
                 <div class="card m-b-20">
                     <div class="card-body">
-                        <h4 class="mt-0 header-title">Add Blog</h4>
+                        <h4 class="mt-0 header-title">Add Case Study</h4>
                         {{ Form::open(['method' => 'post','route'=>'admin.store_blog', 'enctype'=>'multipart/form-data']) }}
                             <div class="row m-b-10">
                                 <div class="col-md-6 col-sm-12 col-xs-12 mb-3">

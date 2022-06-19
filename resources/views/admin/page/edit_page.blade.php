@@ -71,8 +71,11 @@
                                     </div>
                                     <div class="col-sm-6">
                                         <label for="name" >Catalog</label>                                        
-                                        <input type="file" class="form-control m-b-10" name="catalog" value="{{isset($page_details)?$page_details->name:old('name')}}" />
-                                        
+                                        <input type="file" class="form-control m-b-10" name="catalog" />
+                                        @if ($page_details->catelog !== null)
+                                        <a class="btn btn-primary" style="position: absolute;right: 10px;bottom: 10px;padding: 8px 10px;" href="{{asset('backend_images/'.$page_details->catelog.'')}}" target="_blank">View File</a>
+                                        @endif
+                                            
                                         @if($errors->has('name'))
                                             <div class="alert alert-danger" role="alert">
                                                 <strong>{{ $errors->first('name') }}</strong>

@@ -14,7 +14,11 @@
                 @endif
                 <div class="card m-b-20">
                     <div class="card-body">
-                        <h4 class="mt-0 header-title">Edit About Page</h4>
+                        <div style="display: flex;justify-content: space-between;margin-bottom: 10px;align-items: center;">
+                            <h4 class="mt-0 header-title">Edit About Page</h4>
+                            <a type="button" href="{{route('admin.about_images')}}" class="btn btn-info waves-effect waves-light pull-right mb-0">About Slider</a>
+                        </div>
+                                                
                         <form action="{{route('admin.about_edit')}}" method="post" enctype="multipart/form-data">
                         @csrf
                             <div id="img_div">
@@ -53,6 +57,29 @@
                                         <label for="surgery_desc" >Description</label>
                                         <style>#cke_1_contents{height: 500px!important;}</style>
                                         <textarea  class="form-control ckeditor" name="description" id="long_desc">{{$about->description}}</textarea>
+                                        
+                                        @if($errors->has('surgery_desc'))
+                                            <div class="alert alert-danger" role="alert">
+                                                <strong>{{ $errors->first('long_desc') }}</strong>
+                                            </div>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-12">
+                                        <label for="surgery_desc">Heading</label>
+                                        <input type="text" class="form-control" name="heading" value="{{isset($about)?$about->heading:old('heading')}}" />
+                                        
+                                        @if($errors->has('surgery_desc'))
+                                            <div class="alert alert-danger" role="alert">
+                                                <strong>{{ $errors->first('long_desc') }}</strong>
+                                            </div>
+                                        @enderror
+                                        <br />
+                                    </div>
+                                    <div class="col-sm-12">
+                                        <label for="surgery_desc" >Text</label>
+                                        <textarea class="form-control ckeditor" name="text">{{$about->text}}</textarea>
                                         
                                         @if($errors->has('surgery_desc'))
                                             <div class="alert alert-danger" role="alert">

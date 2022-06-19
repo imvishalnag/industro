@@ -1,7 +1,7 @@
         <!-- FOOTER START -->
         <footer class="site-footer footer-large footer-dark text-white" >        
             <!-- FOOTER BLOCKES START -->  
-            <div class="footer-top bg-no-repeat bg-bottom-right" style="background-image:url(images/background/footer-bg.png)">
+            <div class="footer-top bg-no-repeat bg-bottom-right" style="background-image:url({{asset('web/images/background/footer-bg.png')}})">
                 <div class="container-fluid">
                     <div class="row">
                     
@@ -92,11 +92,11 @@
         <!-- FOOTER END -->
 
         <!-- Get In Touch -->                            
-        <div class="contact-slide-hide bg-cover bg-no-repeat" style="background-image:url(images/background/bg-7.jpg)"> 
+        <div class="contact-slide-hide bg-cover bg-no-repeat" style="background-image:url({{asset('web/images/background/bg-7.jpg')}})"> 
             <div class="contact-nav">
                  <a href="javascript:void(0)" class="contact_close">&times;</a>
                  <div class="contact-nav-form">
-                    <div class="contact-nav-info bg-white p-a30 bg-center bg-no-repeat" style="background-image:url(images/background/bg-map2.png);">
+                    <div class="contact-nav-info bg-white p-a30 bg-center bg-no-repeat" style="background-image:url({{asset('web/images/background/bg-map2.png')}});">
                     	<div class="row">
                         	<div class="col-lg-6 col-md-6">
                                 <div class="contact-nav-inner text-black">

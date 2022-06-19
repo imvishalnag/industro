@@ -17,7 +17,7 @@
                 </div>
                 <div class="card m-b-20">
                     <div class="card-body">
-                        <h4 class="mt-0 header-title">Edit Blog</h4>
+                        <h4 class="mt-0 header-title">Edit Case Study</h4>
                         {{ Form::open(['method' => 'post','route'=>'admin.update_post', 'enctype'=>'multipart/form-data']) }}
                             <input type="hidden" name="id" value="{{ $post->id }}">
                             <div class="row mb-10">

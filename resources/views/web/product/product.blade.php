@@ -84,7 +84,7 @@
                                 <p>{{$page->short_description}}</p> 
                             </div>
                             <div class="cart clearfix d-flex">
-                                <button class="site-button-secondry m-r10 site-btn-effect m-b20">View Catalog</button>
+                                <button class="site-button-secondry m-r10 site-btn-effect m-b20" data-toggle="modal" data-target="#exampleModal" data-whatever="{{$page}}">View Catalog</button>
                                 <a class="site-button site-btn-effect m-b20" href="tel:0361 6774480"><i class="fa fa-phone"></i> Call Us : 0361 6774480</a>
                             </div>
                             <div class="product_meta"> 
@@ -123,7 +123,57 @@
             <!-- PRODUCT DETAILS -->    
                 
         </div>
-        <!-- CONTENT CONTENT END -->        
+        <!-- CONTENT CONTENT END -->
+        
+        <!-- MODAL CONTACT START -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Enquring For</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <style>
+                        .form-control{border: 1px solid #ced4da;}
+                        .form-group {position: relative;}
+                        .error{position: absolute;bottom: -25px;left: 0;color: red}
+                    </style>
+                    <form id="product-form">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                <input type="text" class="form-control" id="recipient-name" name="product-name">
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name" class="col-form-label">Name:</label>
+                                    <input type="text" class="form-control" name="name" id="name">
+                                    <span id="name_err" class="error"></span>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone" class="col-form-label">Phone:</label>
+                                    <input type="text" class="form-control" name="phone" id="phone">
+                                    <span id="phone_err" class="error"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="col-form-label">Message:</label>
+                                <textarea class="form-control" name="message" id="message"></textarea>
+                                <span id="message_err" class="error"></span>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Send message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- MODAL CONTACT END -->   
+
     </div>
     <!-- CONTENT END -->
 @endsection  
@@ -210,6 +260,78 @@
         sync1.data('owl.carousel').to(number, 300, true);
       });
     });
-    </script>
-    
+
+    // Modal
+    $('#exampleModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget) // Button that triggered the modal
+        var recipient = button.data('whatever') // Extract info from data-* attributes
+        // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+        // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+        var modal = $(this)
+        modal.find('.modal-title').text('Enquring For ' + recipient.name)
+        modal.find('#recipient-name').val(recipient.name)
+        $('#recipient-name').attr('disabled','disabled')
+        $('#recipient-name').css('cursor','no-drop')
+    });
+
+    $('#product-form').on('submit', function(e){
+        alert('hi');
+        e.preventDefault();
+        product = $('#recipient-name').val();
+        name = $('#name').val();
+        phone = $('#phone').val();
+        message = $('#message').val();
+                
+        if(!name || !phone || !message){
+            if(!name){
+                $('#name_err').html('').show();
+                $('#name_err').html('Please Enter Your Name').fadeOut(3000);
+            }
+            
+            if(!phone){
+                $('#phone_err').html('').show();
+                $('#phone_err').html('Please Enter Phone').fadeOut(3000);
+            
+            }
+
+            if(!message){
+                $('#message_err').html('').show();
+                $('#message_err').html('Please Enter Message').fadeOut(3000);
+            }
+        }else{
+       
+            var data = $(this).serializeArray();
+            console.log(data);
+        
+            $.ajaxSetup({
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            });
+            $.ajax({
+                url: "{{route('web.add_contact')}}",
+                method: "POST",
+                data: data,
+                success: function(response){
+                    var html = '';
+                    if(response.errors)
+                    {
+                        html = '<div class="alert alert-danger">';
+                        for(var count = 0; count < response.errors.length; count++){
+                            html += '<p>' + response.errors[count] + '</p>';
+                        }
+                        html += '</div>';
+                    }
+                    if(response.success){
+                        html = '<div class="alert alert-success">' + response.success + '</div>';
+                        $('#contact-form')[0].reset();
+                    }
+                    if(response.error){
+                        html = '<div class="alert alert-danger">' + response.error + '</div>';
+                    }
+                    $("#alertone").html(html);
+                }
+            });
+        }
+
+    });
+</script>    
 @endsection

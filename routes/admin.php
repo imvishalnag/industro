@@ -236,14 +236,17 @@ Route::group(['namespace' => 'Admin'],function(){
         // about        
         Route::get('/about/view/',[AboutController::class,'singlePost'])->name('admin.about_view');
         Route::post('/about/edit/',[AboutController::class,'updatePost'])->name('admin.about_edit');
+        Route::get('/about/image/',[AboutController::class,'aboutImages'])->name('admin.about_images');
+        Route::post('/about/image/add',[AboutController::class,'aboutImagesAdd'])->name('admin.about_images_add');
+        Route::get('/about/image/delete/{image_id}',[AboutController::class,'imageDelete'])->name('admin.about_images_delete');
             
         // other pages
         Route::view('/additional-page', 'admin.about.list')->name('admin.about.list');
 
         // Knowledge
         Route::view('/knowledge/list/', 'admin.knowledge.list')->name('admin.knowledge.list');
-        Route::get('/case_study/view/',[KnowledgeController::class,'caseStudySinglePost'])->name('admin.case_study_view');
-        Route::post('/case_study/edit/',[KnowledgeController::class,'caseStudyUpdatePost'])->name('admin.case_study_edit');
+        // Route::get('/case_study/view/',[KnowledgeController::class,'caseStudySinglePost'])->name('admin.case_study_view');
+        // Route::post('/case_study/edit/',[KnowledgeController::class,'caseStudyUpdatePost'])->name('admin.case_study_edit');
         Route::get('/application_note/view/',[KnowledgeController::class,'applicationNoteSinglePost'])->name('admin.application_note_view');
         Route::post('/application_note/edit/',[KnowledgeController::class,'applicationNoteUpdatePost'])->name('admin.application_note_edit');
         Route::get('/product_writeup/view/',[KnowledgeController::class,'productWriteupupsinglePost'])->name('admin.product_writeup_view');

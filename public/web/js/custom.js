@@ -652,32 +652,33 @@ function projects_carousel2(){
 		nav:false,
 		dots: true,
 		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-		responsive:{
-			0:{
-				items:1
-			},
-			480:{
-				items:1
-			},
-			580:{
-				items:1
-			},						
-			767:{
-				items:2
-			},
-			991:{
-				items:3
-			},			
-			1152:{
-				items:3
-			},
-			1360:{
-				items:3
-			},
-			1366:{
-				items:3
-			}	
-		    }
+		items:1,
+		// responsive:{
+		// 	0:{
+		// 		items:1
+		// 	},
+		// 	480:{
+		// 		items:1
+		// 	},
+		// 	580:{
+		// 		items:1
+		// 	},						
+		// 	767:{
+		// 		items:2
+		// 	},
+		// 	991:{
+		// 		items:3
+		// 	},			
+		// 	1152:{
+		// 		items:3
+		// 	},
+		// 	1360:{
+		// 		items:3
+		// 	},
+		// 	1366:{
+		// 		items:3
+		// 	}	
+		//     }
 		})	
 	}
 		

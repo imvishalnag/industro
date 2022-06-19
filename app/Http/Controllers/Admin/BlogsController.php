@@ -104,15 +104,15 @@ class BlogsController extends Controller
         })
         ->addColumn('action', function($row){
             $btn = '
-            <a href="'.route('admin.post_view', [encrypt($row->id)]).'" class="btn btn-info btn-sm" target="_blank">View</a>
-            <a href="'.route('admin.post_edit', [encrypt($row->id)]).'" class="btn btn-warning btn-sm">Edit</a>              
-            <a href="'.route('admin.post_delete', [encrypt($row->id)]).'" class="btn btn-danger btn-sm">Delete</a>              
+            <a href="'.route('admin.post_view', [encrypt($row->id)]).'" class="btn btn-info" target="_blank">View</a>
+            <a href="'.route('admin.post_edit', [encrypt($row->id)]).'" class="btn btn-warning">Edit</a>              
+            <a href="'.route('admin.post_delete', [encrypt($row->id)]).'" class="btn btn-danger">Delete</a>              
             ';
             if ($row->status == '1') {
-                $btn .= '<a href="'.route('admin.post_status', ['id' => encrypt($row->id), 'status' => encrypt(2)]).'" class="btn btn-primary btn-sm">Unpublish</a>';
+                $btn .= '<a href="'.route('admin.post_status', ['id' => encrypt($row->id), 'status' => encrypt(2)]).'" class="btn btn-primary">Unpublish</a>';
                 return $btn;
             }else{
-                $btn .= '<a href="'.route('admin.post_status', ['id' => encrypt($row->id), 'status' => encrypt(1)]).'" class="btn btn-success btn-sm">Publish</a>';
+                $btn .= '<a href="'.route('admin.post_status', ['id' => encrypt($row->id), 'status' => encrypt(1)]).'" class="btn btn-success">Publish</a>';
                 return $btn;
             }
             return $btn;

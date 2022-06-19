@@ -15,7 +15,7 @@
                 @endif
                 <div class="card m-b-20">
                     <div class="card-body">                        
-                        <h4 class="mt-0 header-title">View Blog</h4>
+                        <h4 class="mt-0 header-title">View Case Study</h4>
                         <div>
                             <div><img src="{{asset('images/post/'.$single_post->image.'')}}" style="max-width: 100%;" alt="sd"></div>
                             <h4>{{ $single_post->title }}</h4> 

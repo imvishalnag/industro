@@ -115,6 +115,12 @@ class PageController extends Controller
                 }               
                 $page->image = $image_name;
                 $page->save();
+            }            
+            if($request->hasfile('catalog')){
+                $image = $request->file('catalog');
+                $image = ImageService::save($image);
+                $page->catelog = $image;
+                $page->save();
             }
             return redirect()->route('admin.pages.list')->with('message','Product Created Successfully');
         }
@@ -435,6 +441,12 @@ class PageController extends Controller
          $page->short_description = $request->input('short_description');
          $page->description = $request->input('description');
          if($page->save()){
+            if($request->hasfile('catalog')){
+                $image = $request->file('catalog');
+                $image = ImageService::save($image);
+                $page->catelog = $image;
+                $page->save();
+            }
             return redirect()->back()->with('message','Product Updated Successfully');
         }
  

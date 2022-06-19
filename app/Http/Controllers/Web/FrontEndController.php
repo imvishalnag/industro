@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Appointment;
 use App\Models\Activities;
 use App\Models\About;
+use App\Models\AboutImage;
 use App\Models\Banner;
 use App\Models\History;
 use App\Models\Hse;
@@ -148,8 +149,8 @@ class FrontEndController extends Controller
 
     public function blogs()
     {
-        $blogs = Blog::where('status',1)->latest()->get();
-        return view('web.blog.blog',compact('blogs'));
+        $case_study = Blog::where('status',1)->latest()->get();
+        return view('web.case_study',compact('case_study'));
     }
 
      /** Show Reviews  
@@ -183,6 +184,30 @@ class FrontEndController extends Controller
         $contact =  new Contact();
         $contact->name = $request->input('name');
         $contact->subject = $request->input('subject');
+        $contact->email = $request->input('email');
+        $contact->message = $request->input('message');
+           
+        
+        if($contact->save()){
+            return response()->json(['success' => 'Your Inquiry Has Been Registered Successfully.']);
+        }
+    }
+
+    public function productInquery(Request $request)
+    {
+        $rules = array(
+            'name'   => 'required',
+            'email' => 'required',
+            'message' => 'required'
+        );
+        // dd($error);
+        $error = Validator::make($request->all(), $rules);
+        if($error->fails())
+        {
+            return response()->json(['errors' => $error->errors()->all()]);
+        }
+        $contact =  new Contact();
+        $contact->name = $request->input('name');
         $contact->email = $request->input('email');
         $contact->message = $request->input('message');
            
@@ -227,7 +252,7 @@ class FrontEndController extends Controller
     {
         $blog_detail = Blog::findOrFail($blog_id);
         // dd($blog_detail);
-        return view('web.blog.blog-detail',compact('blog_detail'));     
+        return view('web.case_study_detail',compact('blog_detail'));     
     }
 
     /** Show Press Release Details  
@@ -329,7 +354,8 @@ class FrontEndController extends Controller
     public function about()
     {   $id = 1;
         $about = About::find($id);
-        return view('web.about',compact('about'));
+        $about_image = AboutImage::oldest()->get();
+        return view('web.about',compact('about','about_image'));
     }
 
     public function knowledge($slug,$id){

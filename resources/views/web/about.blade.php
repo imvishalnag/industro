@@ -67,8 +67,51 @@
                     </div> 
                 </div>
             </div>   
-            <!-- ABOUT SECTION  SECTION END -->   
+            <!-- ABOUT SECTION  SECTION END -->
+            
+            <div class="section-full p-t50 p-b20 bg-gray">
+                <div class="container">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-12 col-md-12 m-b30">
+                            <!-- TITLE START-->
+                            <div class="section-head center wt-small-separator-outer mb-0">
+                                <div class="wt-small-separator site-text-primary">
+                                    <div class="sep-leaf-left"></div>
+                                    <div>{{$about->heading}}</div>
+                                    <div class="sep-leaf-right"></div>
+                                </div>
+                                <div>
+                                    {!!$about->text!!}
+                                </div>
+                            </div>
+                            <!-- TITLE END-->                                                                                 
+                        </div>
+                        
+                   </div>
+				</div>
                 
+            </div>
+                
+            <div class="section-full p-t10 p-b10 bg-white">
+                <div class="container-fluid">
+
+                   <div class="section-content">
+                        <div class="owl-carousel h3-project-slider  mfp-gallery">
+                        <!-- COLUMNS 1 --> 
+                        @foreach ($about_image as $item)
+                        <div class="item">
+                            <div class="line-filter-outer">
+                                <div class="line-filter-media">
+                                    <img src="{{asset('backend_images/'.$item->image.'')}}" alt="">  
+                                </div>
+                            </div>
+                        </div>                            
+                        @endforeach                
+
+                    </div>                                                                                    
+                   </div>               
+                </div>
+            </div>
             
         </div>
         <!-- CONTENT END -->

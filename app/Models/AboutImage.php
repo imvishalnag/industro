@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class About extends Model
+class AboutImage extends Model
 {
-    protected $table='about';
+    protected $table='about_slider';
 
-    protected $fillable=['description','heading','text'];
+    protected $fillable=['image'];
 }

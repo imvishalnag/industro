@@ -124,25 +124,11 @@
                 <div class="header-info">
                     <ul>
                         <li>
-                            <div class="icon-md">
-                                <span class="icon-cell"><i class="flaticon-trophy"></i></span>
-                            </div>
                             <div class="icon-content">
                                 <strong>India's First Manufacturing & High Voltage Calibration Setup in North-Eastern Region</strong>
-                                <span>ISO 9001:2015 Certified Company</span>
+                                {{-- <span>ISO 9001:2015 Certified Company</span> --}}
                             </div>
                         </li>
-                        <!-- <li>
-                       
-                            <div class="icon-md">
-                                <span class="icon-cell"><i class="flaticon-stamp"></i></span>
-                            </div>
-                            <div class="icon-content">
-                                <strong>Certified Company</strong>
-                                <span>ISO 9001-2020</span>
-                            </div>
-                        
-                        </li> -->
                     </ul>
                 </div> 
                 
@@ -199,6 +185,7 @@
                                 @endif                           
                                 <li><a href="javascript:;">Knowledge</a>
                                     <ul class="sub-menu">
+                                        <li><a href="{{route('web.case_study')}}">Case Study</a></li>
                                         @foreach ($header_data['knowledge'] as $item)
                                         <li><a href="{{route('web.knowledge',['slug'=> $item->name, 'id'=> $item->id ])}}">{{$item->name}}</a></li>
                                         @endforeach                                     
@@ -206,9 +193,9 @@
                                 </li>                                   
                                 <li><a href="javascript:;">Customer Support</a>
                                     <ul class="sub-menu">
-                                        <li><a href="blog-grid.html">Feedback</a></li>                                        
-                                        <li><a href="blog-list-sidebar.html">Service Related Quaries Registration</a></li>
-                                        <li><a href="blog-post-right-sidebar.html">Customer Support Contact & Email</a></li>
+                                        <li><a href="{{route('web.feedback')}}">Feedback</a></li>                                        
+                                        <li><a href="{{route('web.queries')}}">Service Related Quaries Registration</a></li>
+                                        <li><a href="{{route('web.customer_contact')}}">Customer Support Contact & Email</a></li>
                                     </ul>                                
                                 </li>
                                 <li><a href="{{route('web.contact')}}">Contact us</a></li>                                

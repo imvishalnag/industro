@@ -16,9 +16,12 @@
                         <div class="alert alert-danger">{{ Session::get('error') }}</div>
                     @endif
                     <div class="card m-b-20">
-                        <div class="card-body">
+                        <div class="card-body">                            
+                            <div style="display: flex;justify-content: space-between;margin-bottom: 10px;align-items: center;">
+                                <h4 class="mt-0 header-title pull-left">Case Study List</h4>
+                                <a type="button" href="{{route('admin.blog')}}" class="btn btn-info waves-effect waves-light pull-right mb-0">Add New Case Study</a>
+                            </div>
 
-                            <h4 class="mt-0 header-title">Blog List</h4>
                             <table id="post_list" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                                 <thead>
                                     <tr>

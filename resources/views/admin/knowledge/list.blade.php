@@ -31,7 +31,7 @@
                                     <tr>
                                         <td>1</td>
                                         <td>Case Study Page</td>
-                                        <td><a href="{{route('admin.case_study_view')}}" class="btn btn-warning btn-sm">Edit Page</a></td>
+                                        <td><a href="{{route('admin.blog_list')}}" class="btn btn-warning btn-sm">View Case Study</a></td>
                                     </tr>                    
                                     <tr>
                                         <td>2</td>
