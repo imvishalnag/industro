@@ -145,18 +145,21 @@
                                                     <div class="form-group">
                                                         <input name="type" id="qtype" type="hidden" value="4">
                                                         <input name="name" id="qname" type="text" required class="form-control" placeholder="Name">
+                                                        <span id="qname_err" class="error"></span>
                                                     </div>
                                                 </div>
                                                 
                                                 <div class="col-md-12 col-sm-12">
                                                     <div class="form-group">
                                                         <input name="phone" id="qphone" type="text" class="form-control" required placeholder="Phone">
+                                                        <span id="qphone_err" class="error"></span>
                                                      </div>
                                                 </div>
                                                 
                                                 <div class="col-md-12">
                                                     <div class="form-group">
                                                        <textarea name="message" id="qmessage" class="form-control" rows="4" placeholder="Message"></textarea>
+                                                       <span id="qmessage_err" class="error"></span>
                                                      </div>
                                                 </div>
                                                 
@@ -240,7 +243,6 @@
 {{-- Request Quate --}}
 <script>
     $('#quote-form').on('submit', function(e){
-        alert("hi");
         e.preventDefault();
         name = $('#qname').val();
         phone = $('#qphone').val();
@@ -249,19 +251,19 @@
                 
         if(!name || !phone || !message){
             if(!name){
-                $('#name_err').html('').show();
-                $('#name_err').html('Please Enter Your Name').fadeOut(3000);
+                $('#qname_err').html('').show();
+                $('#qname_err').html('Please Enter Your Name').fadeOut(3000);
             }
             
             if(!phone){
-                $('#phone_err').html('').show();
-                $('#phone_err').html('Please Enter Email').fadeOut(3000);
+                $('#qphone_err').html('').show();
+                $('#pqphone_err').html('Please Enter Email').fadeOut(3000);
             
             }
 
             if(!message){
-                $('#message_err').html('').show();
-                $('#message_err').html('Please Enter Message').fadeOut(3000);
+                $('#qmessage_err').html('').show();
+                $('#mesqmessage_err').html('Please Enter Message').fadeOut(3000);
             }
         }else{
        

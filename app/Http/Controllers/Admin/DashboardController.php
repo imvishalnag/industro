@@ -58,10 +58,10 @@ class DashboardController extends Controller
     }
     public function allList($page_slug,$page_id)
     {
-        $contact = Forms::where('type',$page_id)->get();
+        $contact = Forms::where('type',$page_id)->latest()->get();
         // dd($contact);
         
-        return view('admin.contact.contact_list',compact('contact'));
+        return view('admin.contact.contact_list',compact('contact','page_id'));
     }
 
     public function customerSupport()

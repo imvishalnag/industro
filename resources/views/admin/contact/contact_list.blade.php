@@ -23,9 +23,12 @@
                                 <tr>
                                 <th>Sl. No</th>
                                 <th>Name</th>
+                                @if ($page_id == 3)                                    
+                                <th>Product Inquery</th>
+                                @endif
                                 <th>Mobile</th>
                                 <th>Message</th>
-                                {{-- <th>Action</th> --}}
+                                <th>Date</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,8 +36,12 @@
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$items->name}}</td>
+                                        @if ($page_id == 3)                                   
+                                        <td>{{$items->product}}</td>
+                                        @endif
                                         <td>{{$items->phone}}</td>
                                         <td>{{$items->message}}</td>
+                                        <td>{{$items->created_at->format('d/m/Y')}}</td>
                                         {{-- <td><a href="{{route('admin.contact.delete',['contact_id'=>$items->id])}}" class="btn btn-danger">Delete</a></td> --}}
                                     </tr>
                                 @endforeach                   

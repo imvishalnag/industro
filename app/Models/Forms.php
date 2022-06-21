@@ -9,5 +9,5 @@ class Forms extends Model
 
     protected $table='forms';
 
-    protected $fillable=['name','phone','message','type'];
+    protected $fillable=['name','phone','message','type','product'];
 }

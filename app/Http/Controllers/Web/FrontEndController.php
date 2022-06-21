@@ -212,8 +212,8 @@ class FrontEndController extends Controller
         $formInquery->phone = $request->input('phone');
         $formInquery->message = $request->input('message');
         $formInquery->type = $request->input('type');
-
-
+        // dd($formInquery);
+        $formInquery->product = $request->input('product');
         if($formInquery->save()){
             return response()->json(['success' => 'Your Inquiry Has Been Registered Successfully.']);
         }

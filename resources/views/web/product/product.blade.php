@@ -84,7 +84,9 @@
                                 <p>{{$page->short_description}}</p> 
                             </div>
                             <div class="cart clearfix d-flex">
+                                @if(isset($page->catelog) && !empty($page->catelog))                                    
                                 <button class="site-button-secondry m-r10 site-btn-effect m-b20" data-toggle="modal" data-target="#exampleModal" data-whatever="{{$page}}">View Catalog</button>
+                                @endisset
                                 <a class="site-button site-btn-effect m-b20" href="tel:0361 6774480"><i class="fa fa-phone"></i> Call Us : 0361 6774480</a>
                             </div>
                             <div class="product_meta"> 
@@ -124,7 +126,7 @@
                 
         </div>
         <!-- CONTENT CONTENT END -->
-        
+        @if(isset($page->catelog) && !empty($page->catelog))
         <!-- MODAL CONTACT START -->
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
@@ -141,11 +143,12 @@
                         .error{position: absolute;bottom: -25px;left: 0;color: red}
                     </style>
                     <form id="product-form">
+                        <div id="alertone"></div>
                         <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">   
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                <input type="text" class="form-control" id="recipient-name" name="product-name">
+                                <input type="text" class="form-control" id="product-name" name="product" value="{{$page->name}}">
                                 <input type="hidden" name="type" id="type" value="3">   
                                 <input type="hidden" name="catelog" id="catelog" value="{{$page->catelog}}">   
                             </div>
@@ -175,7 +178,8 @@
                 </div>
             </div>
         </div>
-        <!-- MODAL CONTACT END -->   
+        <!-- MODAL CONTACT END -->  
+        @endisset 
 
     </div>
     <!-- CONTENT END -->
@@ -272,14 +276,15 @@
         // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
         var modal = $(this)
         modal.find('.modal-title').text('Enquring For ' + recipient.name)
-        modal.find('#recipient-name').val(recipient.name)
-        $('#recipient-name').attr('disabled','disabled')
-        $('#recipient-name').css('cursor','no-drop')
+        // modal.find('#recipient-name').val(recipient.name)
+        $('#product-name').attr('readonly','readonly')
+        $('#product-name').css('cursor','no-drop')
     });
 
+    @if(isset($page->catelog) && !empty($page->catelog))
     $('#product-form').on('click', function(e){
         e.preventDefault();
-        product = $('#recipient-name').val();
+        product = $('#product-name').val();
         name = $('#name').val();
         phone = $('#phone').val();
         message = $('#message').val();
@@ -289,25 +294,23 @@
         if(!name || !phone || !message){
             if(!name){
                 $('#name_err').html('').show();
-                $('#name_err').html('Please Enter Your Name').fadeOut(3000);
+                $('#name_err').html('Please Enter Your Name');
             }
             
             if(!phone){
                 $('#phone_err').html('').show();
-                $('#phone_err').html('Please Enter Phone').fadeOut(3000);
+                $('#phone_err').html('Please Enter Phone');
             
             }
 
             if(!message){
                 $('#message_err').html('').show();
-                $('#message_err').html('Please Enter Message').fadeOut(3000);
+                $('#message_err').html('Please Enter Message');
             }
         }else{       
             var data = $(this).serializeArray();
-            if(length(data.asset) > 0) {
-                console.log(data);
-                const URL = "{{asset('backend_images/')}}"+ data.asset;
-            }
+            const URL = "{{asset('backend_images')}}/"+ asset;
+            
             $.ajaxSetup({
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             });
@@ -316,6 +319,7 @@
                 method: "POST",
                 data: data,
                 success: function(response){
+                    console.log('here',response);
                     var html = '';
                     if(response.errors)
                     {
@@ -334,10 +338,14 @@
                         html = '<div class="alert alert-danger">' + response.error + '</div>';
                     }
                     $("#alertone").html(html);
+                },
+                error: function(xhr, textStatus, thrownError) {
+                    console.log(' Error',xhr);
                 }
             });
         }
 
-    });
+    });    
+    @endisset
 </script>    
 @endsection

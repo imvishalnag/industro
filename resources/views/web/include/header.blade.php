@@ -14,6 +14,7 @@
     <!-- FAVICONS ICON -->
     <link rel="icon" href="{{asset('web/images/favicon.png')}}" type="image/x-icon" />
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('web/images/favicon.png')}}" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <!-- PAGE TITLE HERE -->
     <title>HD Engineering | India's First Manufacturing & High Voltage Calibration Setup in North-Eastern Region </title>
