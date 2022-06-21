@@ -18,6 +18,7 @@ use App\Models\Client;
 use App\Models\Csr;
 use App\Models\Cause;
 use App\Models\Chairmen;
+use App\Models\CustomerSupport;
 use App\Models\Slider;
 use App\Models\Contact;
 use App\Models\Distributor;
@@ -30,6 +31,7 @@ use App\Models\Enviroment;
 use App\Models\Employee;
 use App\Models\East;
 use App\Models\Faq;
+use App\Models\Forms;
 use App\Models\Health;
 use App\Models\HomeService;
 use App\Models\HomeProduct;
@@ -184,7 +186,7 @@ class FrontEndController extends Controller
         $contact =  new Contact();
         $contact->name = $request->input('name');
         $contact->subject = $request->input('subject');
-        $contact->email = $request->input('email');
+        $contact->phone = $request->input('email');
         $contact->message = $request->input('message');
            
         
@@ -193,28 +195,35 @@ class FrontEndController extends Controller
         }
     }
 
-    public function productInquery(Request $request)
+    public function formInquery(Request $request)
     {
         $rules = array(
             'name'   => 'required',
-            'email' => 'required',
+            'phone' => 'required|numeric|digits:10',
             'message' => 'required'
         );
-        // dd($error);
         $error = Validator::make($request->all(), $rules);
         if($error->fails())
         {
             return response()->json(['errors' => $error->errors()->all()]);
         }
-        $contact =  new Contact();
-        $contact->name = $request->input('name');
-        $contact->email = $request->input('email');
-        $contact->message = $request->input('message');
-           
-        
-        if($contact->save()){
+        $formInquery =  new Forms();
+        $formInquery->name = $request->input('name');
+        $formInquery->phone = $request->input('phone');
+        $formInquery->message = $request->input('message');
+        $formInquery->type = $request->input('type');
+
+
+        if($formInquery->save()){
             return response()->json(['success' => 'Your Inquiry Has Been Registered Successfully.']);
         }
+    }
+
+    public function customerSupport()
+    {
+        $contact = CustomerSupport::first();
+        // dd($contact);
+        return view('web.customer_contact',compact('contact'));   
     }
 
     public function addRegister(Request $request)

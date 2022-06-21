@@ -133,44 +133,35 @@
                                 </div>
                             </div>
                             <div class="col-lg-6 col-md-6">
-                                <form class="cons-contact-form" method="post" action="http://thewebmax.com/industro/form-handler2.php">
+                                <form id="quote-form" class="cons-contact-form">
+                                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">  
                                     <div class="m-b30">
                                         <!-- TITLE START -->
                                          <h2 class="m-b30">Get In Touch</h2>
                                         <!-- TITLE END --> 
+                                            <div id="qalertone"></div>
                                             <div class="row">
-                                               <div class="col-md-6 col-sm-6">
+                                               <div class="col-md-12 col-sm-12">
                                                     <div class="form-group">
-                                                        <input name="username" type="text" required class="form-control" placeholder="Name">
+                                                        <input name="type" id="qtype" type="hidden" value="4">
+                                                        <input name="name" id="qname" type="text" required class="form-control" placeholder="Name">
                                                     </div>
                                                 </div>
                                                 
-                                                <div class="col-md-6 col-sm-6">
+                                                <div class="col-md-12 col-sm-12">
                                                     <div class="form-group">
-                                                       <input name="email" type="text" class="form-control" required placeholder="Email">
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="col-md-6 col-sm-6">
-                                                    <div class="form-group">
-                                                        <input name="phone" type="text" class="form-control" required placeholder="Phone">
-                                                     </div>
-                                                </div>
-                                                
-                                                <div class="col-md-6 col-sm-6">
-                                                    <div class="form-group">
-                                                         <input name="subject" type="text" class="form-control" required placeholder="Subject">
+                                                        <input name="phone" id="qphone" type="text" class="form-control" required placeholder="Phone">
                                                      </div>
                                                 </div>
                                                 
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                       <textarea name="message" class="form-control" rows="4" placeholder="Message"></textarea>
+                                                       <textarea name="message" id="qmessage" class="form-control" rows="4" placeholder="Message"></textarea>
                                                      </div>
                                                 </div>
                                                 
                                                <div class="col-md-12">
-                                                    <button type="submit" class="site-button site-btn-effect">Submit Now</button>
+                                                    <button type="submit" id="submit" class="site-button site-btn-effect">Submit Now</button>
                                                 </div>
                                                 
                                             </div>
@@ -246,6 +237,71 @@
 
 @yield('script')
 
+{{-- Request Quate --}}
+<script>
+    $('#quote-form').on('submit', function(e){
+        alert("hi");
+        e.preventDefault();
+        name = $('#qname').val();
+        phone = $('#qphone').val();
+        message = $('#qmessage').val();
+        type = $('#qtype').val();
+                
+        if(!name || !phone || !message){
+            if(!name){
+                $('#name_err').html('').show();
+                $('#name_err').html('Please Enter Your Name').fadeOut(3000);
+            }
+            
+            if(!phone){
+                $('#phone_err').html('').show();
+                $('#phone_err').html('Please Enter Email').fadeOut(3000);
+            
+            }
 
+            if(!message){
+                $('#message_err').html('').show();
+                $('#message_err').html('Please Enter Message').fadeOut(3000);
+            }
+        }else{
+       
+            var data = $(this).serializeArray();
+            console.log(data);
+        
+            $.ajaxSetup({
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+              });
+            $.ajax({
+                url: "{{route('web.form_inquery_send')}}",
+                method: "POST",
+                data: data,
+                success: function(response){
+                    var html = '';
+                    console.log(response)
+                    if(response.errors)
+                    {
+                        html = '<div class="alert alert-danger">';
+                        for(var count = 0; count < response.errors.length; count++){
+                            html += '<p>' + response.errors[count] + '</p>';
+                        }
+                        html += '</div>';
+                    }
+                    if(response.success){
+                        html = '<div class="alert alert-success">' + response.success + '</div>';
+                        $('#quote-form')[0].reset();
+                    }
+                    if(response.error){
+                        html = '<div class="alert alert-danger">' + response.error + '</div>';
+                    }
+                    $("#qalertone").html(html);
+                },
+                error: function(xhr, textStatus, thrownError) {
+                    console.log(' Error',xhr);
+                }
+            });
+        }
+
+    });
+</script>
 </body>
 </html>

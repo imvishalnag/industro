@@ -20,12 +20,12 @@ Route::get('/knowledge/{slug}/{id}',[FrontEndController::class,'knowledge'])->na
 Route::view('/contact','web.contact')->name('web.contact');
 Route::post('add/contact',[FrontEndController::class,'addContact'])->name('web.add_contact');
 
-Route::view('/feedback','web.feedback')->name('web.feedback');
+Route::view('feedback','web.feedback')->name('web.feedback');
 Route::view('/queries','web.queries')->name('web.queries');
-Route::view('/customer_contact','web.customer_contact')->name('web.customer_contact');
+Route::get('/customer_contact',[FrontEndController::class,'customerSupport'])->name('web.customer_contact.view');
 
 // contact
-Route::post('add/product_inquery',[FrontEndController::class,'productInquery'])->name('web.product_inquery');
+Route::post('feedback/add',[FrontEndController::class,'formInquery'])->name('web.form_inquery_send');
 
 // product
 Route::get('{catslug}/{slug}/{page_id}',[FrontEndController::class,'page'])->name('web.catagory.sub-catagory');

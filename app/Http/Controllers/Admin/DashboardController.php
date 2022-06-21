@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use App\Models\Contact;
+use App\Models\CustomerSupport;
 use App\Models\Blog;
+use App\Models\Forms;
 use App\Models\SubCategory;
 use App\Models\Category;
 use App\Models\Page;
@@ -53,6 +55,43 @@ class DashboardController extends Controller
         }else{
             return redirect()->back()->with('error','Sorry Current Password Does Not Correct');
         }
+    }
+    public function allList($page_slug,$page_id)
+    {
+        $contact = Forms::where('type',$page_id)->get();
+        // dd($contact);
+        
+        return view('admin.contact.contact_list',compact('contact'));
+    }
+
+    public function customerSupport()
+    {
+        $customerSupport = CustomerSupport::first();
+        // dd($customerSupport);        
+        return view('admin.contact.customer_support',compact('customerSupport'));
+    }
+
+    public function customerSupportAdd(Request $request)
+    {
+        $this->validate($request, [
+            'phone' => 'required',
+            'email' => 'required',
+        ]);
+        // dd($request);
+        $phone = $request->input('phone');
+        $email = $request->input('email');
+        $id = 1;
+        $customerSupport = CustomerSupport::find($id);
+        $customerSupport->phone = $phone; 
+        $customerSupport->email = $email; 
+          
+        if($customerSupport->save()){
+            return redirect()->back()->with('message', 'Customer Support Updated Successfully!');
+        }else {
+            return redirect()->back()->with('error', 'Something went wrong!');
+        }
+        
+        return view('admin.contact.customer_support',compact('contact'));
     }
 }
 

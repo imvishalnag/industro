@@ -106,23 +106,23 @@
                                 <a href="{{route('admin.contact.user_list')}}" class="waves-effect"><i class="ion-android-contacts"></i> <span> Users </span> </a>
                             </li> --}}
                             
-                            {{-- <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-settings"></i><span>Settings</span></a>
-                                <ul class="list-unstyled">
-                                    <li><a href="{{route('admin.webSliderList')}}"> Homepage Slider</a></li>
-                                    <li><a href="{{route('admin.intro_view')}}"> Homepage Intro</a></li>
-                                    <li><a href="{{route('admin.webServiceList')}}"> Homepage Service</a></li>
-                                    <li><a href="{{route('admin.chairmen_view')}}"> Homepage Chairman</a></li>
-                                    <li><a href="{{route('admin.banner_view')}}"> Homepage Banner</a></li>
-                                </ul>
-                            </li>   --}}
                             <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-settings"></i><span>Homepage Settings</span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account-multiple"></i><span>Contact & Inquery</span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{route('admin.contact.allList',['page_slug'=>'feedback','page_id'=>'1'])}}">Feedback</a></li>
+                                    <li><a href="{{route('admin.contact.allList',['page_slug'=>'customer_queries','page_id'=>'2'])}}">Customer Queries</a></li>
+                                    <li><a href="{{route('admin.contact.allList',['page_slug'=>'product_catalog_request','page_id'=>'3'])}}">Product Catalog Request</a></li>
+                                    <li><a href="{{route('admin.contact.allList',['page_slug'=>'request_quote','page_id'=>'4'])}}">Request Quote</a></li>
+                                </ul>
+                            </li>  
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-settings"></i><span>Settings</span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="{{route('admin.webSliderList')}}"> Homepage Slider</a></li>
                                     <li><a href="{{route('admin.intro_view')}}"> Homepage Intro</a></li>
                                     <li><a href="{{route('admin.home_product_view')}}"> Homepage Product</a></li>
                                     <li><a href="{{route('admin.client.list')}}">Client</a></li>
+                                    <li><a href="{{route('admin.customer_support.view')}}">Customer Support</a></li>
                                 </ul>
                             </li>  
                            

@@ -50,7 +50,7 @@
                                                     
                                                     <div class="icon-content">
                                                         <h3 class="m-t0 site-text-primary">Phone number</h3>
-                                                        <p>0361 6774480 / 9101177485</p>
+                                                        <p>{{$contact->phone}}</p>
                                                     </div>
                                                 </div>
     
@@ -58,7 +58,7 @@
                                                     
                                                     <div class="icon-content">
                                                         <h3 class="m-t0 site-text-primary">Email address</h3>
-                                                        <p>info@hdtnm.com</p>
+                                                        <p>{{$contact->email}}</p>
                                                     </div>
                                                 </div>
                                                 

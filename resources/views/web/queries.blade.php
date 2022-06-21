@@ -32,8 +32,8 @@
 
         <!-- SECTION CONTENTG START -->
         
-            <!-- CONTACT FORM -->
-            <div class="section-full  p-t80 p-b50 bg-cover" style="background-image:url({{asset('web/images/background/bg-7.jpg')}})">   
+        <!-- CONTACT FORM -->
+        <div class="section-full  p-t80 p-b50 bg-cover" style="background-image:url({{asset('web/images/background/bg-7.jpg')}})">   
             <div class="section-content">
                 <div class="container">
                     <div class="contact-one">
@@ -41,29 +41,30 @@
                         <div class="row  d-flex justify-content-center flex-wrap">
                         
                             <div class="col-lg-8 col-md-8 m-b30">
-                                <form id="contact-form" class="cons-contact-form">
+                                <form class="cons-contact-form feedback-form">
+                                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">   
                                     
                                     <div id="alertone"></div>
-                                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">                 
                                     <div class="row">
                                         <div class="col-lg-12 col-md-12">
                                             <div class="form-group">
-                                                <input name="name" type="text" id="contact_name" required class="form-control" placeholder="Name">
-                                                <span id="contact_name_err" style="color:red"></span>
+                                                <input type="hidden" name="type" id="type" value="2">   
+                                                <input name="name" type="text" id="name" required class="form-control" placeholder="Name">
+                                                <span id="name_err" style="color:red"></span>
                                             </div>
                                         </div>
                                         
                                         <div class="col-lg-12 col-md-12">
                                             <div class="form-group">
-                                                <input name="email" type="text" id="contact_email" class="form-control" required placeholder="Phone/Email">
-                                                <span id="contact_email_err" style="color:red"></span>
+                                                <input name="phone" type="text" id="phone" class="form-control" required placeholder="Phone">
+                                                <span id="phone_err" style="color:red"></span>
                                             </div>
                                         </div>
                                         
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <textarea name="message" id="contact_message" class="form-control" rows="6" placeholder="Message"></textarea>
-                                                <span id="contact_message_err" style="color:red"></span>
+                                                <textarea name="message" id="message" class="form-control" rows="6" placeholder="Message"></textarea>
+                                                <span id="message_err" style="color:red"></span>
                                             </div>
                                         </div>
                                         
@@ -90,44 +91,28 @@
 @section('script')
     
 <script>
-    $('#contact_email').keyup(function(){
-        var email = $(this).val();
-        if(!isNaN(email)){
-            $(this).attr('type','number');
-            
-        }
-        if( $(this).val() == ''){
-            $(this).attr('type','text');
-            
-        }
-    });
-    $('#contact-form').on('submit', function(e){
+    $('.feedback-form').on('submit', function(e){
         e.preventDefault();
-        name = $('#contact_name').val();
-        email = $('#contact_email').val();
-        subject = $('#contact_subject').val();
-        message = $('#contact_message').val();
+        name = $('#name').val();
+        phone = $('#phone').val();
+        message = $('#message').val();
+        type = $('#type').val();
                 
-        if(!name || !email || !message){
+        if(!name || !phone || !message){
             if(!name){
-                $('#contact_name_err').html('').show();
-                $('#contact_name_err').html('Please Enter Your Name').fadeOut(3000);
+                $('#name_err').html('').show();
+                $('#name_err').html('Please Enter Your Name').fadeOut(3000);
             }
             
-            if(!email){
-                $('#contact_email_err').html('').show();
-                $('#contact_email_err').html('Please Enter Email').fadeOut(3000);
+            if(!phone){
+                $('#phone_err').html('').show();
+                $('#phone_err').html('Please Enter Email').fadeOut(3000);
             
-            }
-            
-            if(!subject){
-                $('#contact_subject_err').html('').show();
-                $('#contact_subject_err').html('Please Enter Subject').fadeOut(3000);
             }
 
             if(!message){
-                $('#contact_message_err').html('').show();
-                $('#contact_message_err').html('Please Enter Message').fadeOut(3000);
+                $('#message_err').html('').show();
+                $('#message_err').html('Please Enter Message').fadeOut(3000);
             }
         }else{
        
@@ -135,14 +120,15 @@
             console.log(data);
         
             $.ajaxSetup({
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-            });
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')}
+              });
             $.ajax({
-                url: "{{route('web.add_contact')}}",
+                url: "{{route('web.form_inquery_send')}}",
                 method: "POST",
                 data: data,
                 success: function(response){
                     var html = '';
+                    console.log(response)
                     if(response.errors)
                     {
                         html = '<div class="alert alert-danger">';
@@ -153,12 +139,15 @@
                     }
                     if(response.success){
                         html = '<div class="alert alert-success">' + response.success + '</div>';
-                        $('#contact-form')[0].reset();
+                        $('.feedback-form')[0].reset();
                     }
                     if(response.error){
                         html = '<div class="alert alert-danger">' + response.error + '</div>';
                     }
                     $("#alertone").html(html);
+                },
+                error: function(xhr, textStatus, thrownError) {
+                    console.log(' Error',xhr);
                 }
             });
         }

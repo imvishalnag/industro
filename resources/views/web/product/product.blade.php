@@ -141,10 +141,13 @@
                         .error{position: absolute;bottom: -25px;left: 0;color: red}
                     </style>
                     <form id="product-form">
+                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">   
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">Recipient:</label>
                                 <input type="text" class="form-control" id="recipient-name" name="product-name">
+                                <input type="hidden" name="type" id="type" value="3">   
+                                <input type="hidden" name="catelog" id="catelog" value="{{$page->catelog}}">   
                             </div>
                             <div class="row">
                                 <div class="form-group col-md-6">
@@ -166,7 +169,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Send message</button>
+                            <button type="button" class="site-button site-btn-effect">Submit Now</button>
                         </div>
                     </form>
                 </div>
@@ -274,13 +277,14 @@
         $('#recipient-name').css('cursor','no-drop')
     });
 
-    $('#product-form').on('submit', function(e){
-        alert('hi');
+    $('#product-form').on('click', function(e){
         e.preventDefault();
         product = $('#recipient-name').val();
         name = $('#name').val();
         phone = $('#phone').val();
         message = $('#message').val();
+        type = $('#type').val();
+        asset = $('#catelog').val();
                 
         if(!name || !phone || !message){
             if(!name){
@@ -298,16 +302,17 @@
                 $('#message_err').html('').show();
                 $('#message_err').html('Please Enter Message').fadeOut(3000);
             }
-        }else{
-       
+        }else{       
             var data = $(this).serializeArray();
-            console.log(data);
-        
+            if(length(data.asset) > 0) {
+                console.log(data);
+                const URL = "{{asset('backend_images/')}}"+ data.asset;
+            }
             $.ajaxSetup({
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             });
             $.ajax({
-                url: "{{route('web.add_contact')}}",
+                url: "{{route('web.form_inquery_send')}}",
                 method: "POST",
                 data: data,
                 success: function(response){
@@ -322,7 +327,8 @@
                     }
                     if(response.success){
                         html = '<div class="alert alert-success">' + response.success + '</div>';
-                        $('#contact-form')[0].reset();
+                        window.open(URL, '_blank');
+                        $('#product-form')[0].reset();
                     }
                     if(response.error){
                         html = '<div class="alert alert-danger">' + response.error + '</div>';

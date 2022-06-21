@@ -243,6 +243,11 @@ Route::group(['namespace' => 'Admin'],function(){
         // other pages
         Route::view('/additional-page', 'admin.about.list')->name('admin.about.list');
 
+        Route::get('/contact/{page_slug}/{page_id}', [DashboardController::class,'allList'])->name('admin.contact.allList');
+
+        Route::get('/customer_support/view', [DashboardController::class,'customerSupport'])->name('admin.customer_support.view');
+        Route::put('/customer_support/add', [DashboardController::class,'customerSupportAdd'])->name('admin.customer_support.add');
+
         // Knowledge
         Route::view('/knowledge/list/', 'admin.knowledge.list')->name('admin.knowledge.list');
         // Route::get('/case_study/view/',[KnowledgeController::class,'caseStudySinglePost'])->name('admin.case_study_view');

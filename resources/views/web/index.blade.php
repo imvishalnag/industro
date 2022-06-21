@@ -268,7 +268,7 @@
                         <div class="row justify-content-center">
                             
                             @foreach ($home_product as $items)
-                            <div class="col-lg-4 col-md-6 col-sm-6 m-b30 home_product_img">
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 m-b30 home_product_img">
                             	<a class="wt-team-arc2 wt-team-arc2-no-border" href="{{route('web.catagory.sub-catagory',['catslug'=>'Product','slug'=>$items->page->name,'page_id'=>$items->product_id])}}">
                                 	
                                     <div class="wt-media">

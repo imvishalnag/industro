@@ -195,7 +195,7 @@
                                     <ul class="sub-menu">
                                         <li><a href="{{route('web.feedback')}}">Feedback</a></li>                                        
                                         <li><a href="{{route('web.queries')}}">Service Related Quaries Registration</a></li>
-                                        <li><a href="{{route('web.customer_contact')}}">Customer Support Contact & Email</a></li>
+                                        <li><a href="{{route('web.customer_contact.view')}}">Customer Support Contact & Email</a></li>
                                     </ul>                                
                                 </li>
                                 <li><a href="{{route('web.contact')}}">Contact us</a></li>                                
