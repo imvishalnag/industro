@@ -6,14 +6,13 @@
         
             <!-- SLIDER START --> 
             <div class="slider-outer">
-
                 <div class="main-slider style-two default-banner">
                     <div class="tp-banner-container">
-                        <div class="tp-banner" >
+                        <div class="tp-banner">
                             <!-- START REVOLUTION SLIDER 5.4.1 -->
-                            <div id="rev_slider_26_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="mask-showcase" data-source="gallery" style="background:#aaaaaa;padding:0px;">
+                            <div id="rev_slider_26_1_wrapper" class="rev_slider_wrapper" data-alias="mask-showcase" data-source="gallery" style="background:#aaaaaa;padding:0px;">
 
-                                <div id="rev_slider_26_1" class="rev_slider fullscreenbanner tiny_bullet_slider" style="display:none;" data-version="5.4.1">
+                                <div id="rev_slider_26_1" class="rev_slider tiny_bullet_slider" style="display:none;" data-version="5.4.1">
                                     <ul>	
                                         @foreach ($slider as $item)  
                                         <!-- SLIDE 1 -->
@@ -51,8 +50,8 @@
                                             <!-- LAYER NR. 2 -->
                                             <div class="tp-caption   tp-resizeme" 
                                                 id="slide-{{$loop->iteration}}-layer-2" 
-                                                data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
-                                                data-y="['middle','middle','middle','middle']" data-voffset="['-250','-250','-300','-300']" 
+                                                data-x="['left','left','center','center']" data-hoffset="['-350','-350','0','0']" 
+                                                data-y="['middle','middle','middle','middle']" data-voffset="['-250','-250','-200','-200']" 
                                                 data-width="['650','650','620','380']"
                                                 data-height="none"
                                                 data-whitespace="normal"
@@ -74,8 +73,8 @@
                                             <!-- LAYER NR. 3 -->
                                             <div class="tp-caption   tp-resizeme" 
                                                 id="slide-{{$loop->iteration}}-layer-3" 
-                                                data-x="['left','left','center','center']" data-hoffset="['0','0','0','0']" 
-                                                data-y="['middle','middle','middle','middle']" data-voffset="['-100','-100','-200','-220']" 
+                                                data-x="['left','left','center','center']" data-hoffset="['-350','-350','0','0']" 
+                                                data-y="['middle','middle','middle','middle']" data-voffset="['-100','-100','-150','-150']" 
                                                 data-fontsize="['100','100','60','40']"
                                                 data-lineheight="['100','100','60','40']"
                                                 data-width="['700','650','620','380']"
@@ -99,8 +98,8 @@
                                             <!-- LAYER NR. 5 -->
                                             <div class="tp-caption   tp-resizeme rs-parallaxlevel-2" 
                                                 id="slide-{{$loop->iteration}}-layer-5" 
-                                                data-x="['center','center','center','center']" data-hoffset="['500','500','0','0']" 
-                                                data-y="['middle','middle','bottom','bottom']" data-voffset="['-100','-100','50','50']" 
+                                                data-x="['center','center','center','center']" data-hoffset="['400','400','0','0']" 
+                                                data-y="['middle','middle','bottom','bottom']" data-voffset="['-100','-100','150','150']" 
                                                 data-width="none"
                                                 data-height="none"
                                                 data-whitespace="nowrap"
@@ -117,7 +116,7 @@
                                                 data-paddingleft="[0,0,0,0]"
                                         
                                                 style="z-index: 6;">
-                                                <img src="{{ asset('images/banner/'.$item->image.'') }}" alt="" data-ww="['1000px','1000px','800px','500px']" data-hh="['480px','480px','450','281']" width="1200" height="675" data-no-retina>
+                                                <img src="{{ asset('images/banner/'.$item->image.'') }}" alt="" data-ww="['1200px','1000px','800px','500px']" data-hh="['520px','480px','450','281']" width="1200" height="675" data-no-retina>
                                             </div>    
                                         </li> 
                                         @endforeach                                    
@@ -127,10 +126,9 @@
                                 </div>
 
                             </div>
-                    </div>
+                        </div>
                     </div>
                 </div>
-
             </div>
             <!-- SLIDER END --> 
            
@@ -141,10 +139,10 @@
                         <div class="section-content">                 
                             <div class="row justify-content-center d-flex">
                             
-                                <div class="col-lg-6 col-md-12 m-b30">
+                                <div class="col-lg-6 col-md-12">
                                     <!-- Accordian -->
                                     @foreach ($intro as $item)  
-                                    <div class="wt-accordion acc-bg-gray m-b50 about-section-three-acc" id="accordion">
+                                    <div class="wt-accordion acc-bg-gray about-section-three-acc" id="accordion">
                                         <div class="panel wt-panel">
                                             <div class="acod-head acc-actives" id="headingOne">
                                                 <h5 class="acod-title">
@@ -249,9 +247,8 @@
             <!-- ABOUT ONE SECTION END -->    
 
             <!-- OUR TEAM START -->
-            <div class="section-full p-t80 p-b50 bg-white arc2-team-wrapper">
-                <div class="container">
-                    <div class="section-content">
+            <div class="section-full p-t40 p-b50 bg-white arc2-team-wrapper">
+                <div class="section-content container-fluid">
                     
                     <!-- TITLE START-->
                     <div class="section-head center wt-small-separator-outer text-center">
@@ -268,20 +265,20 @@
                         <div class="row justify-content-center">
                             
                             @foreach ($home_product as $items)
-                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 m-b30 home_product_img">
+                            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 home_product_img p-0">
                             	<a class="wt-team-arc2 wt-team-arc2-no-border" href="{{route('web.catagory.sub-catagory',['catslug'=>'Product','slug'=>$items->page->name,'page_id'=>$items->product_id])}}">
-                                	
-                                    <div class="wt-media">
-                                        <img src="{{ asset('backend_images/'.$items->page->image) }}" alt="">                                                
-                                    </div>                                   
-
-                                    <div class="wt-info bg-gray-light p-a20">
+                                	   
+                                    <div class="wt-info p-a20">
                                         <div class="team-detail  text-center">
-                                            <h4 class="m-t0">{{$items->page->name}}</h4>
-                                            <p>{{$items->subcategory->name}}</p>
+                                            <h4 class="m-0">{{$items->page->name}}</h4>
+                                            <p>{{$items->page->short_description}}</p>
+                                            <div class="btn btn-outline-secondary py-0 mt-2">Know more</div>
                                         </div>
                                     </div>
                             
+                                    <div class="wt-media">
+                                        <img src="{{ asset('backend_images/'.$items->page->image) }}" alt="">                                                
+                                    </div>  
                                 </a>
                             </div>                                                                                 
                             @endforeach                            
@@ -289,7 +286,6 @@
                         </div>
                     </div>      
                         
-                    </div>
                 </div>
             </div>   
             <!-- OUR TEAM SECTION END -->

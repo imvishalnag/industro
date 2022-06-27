@@ -125,6 +125,9 @@
                 <div class="header-info">
                     <ul>
                         <li>
+                            <div class="icon-md">
+                                <span class="icon-cell"><i class="flaticon-trophy"></i></span>
+                            </div>
                             <div class="icon-content">
                                 <strong>India's First Manufacturing & High Voltage Calibration Setup in North-Eastern Region</strong>
                                 {{-- <span>ISO 9001:2015 Certified Company</span> --}}

@@ -626,7 +626,7 @@ function projects_carousel2(){
 		navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
 		responsive:{
 			0:{
-				items:2,
+				items:3,
 			},
 			480:{
 				items:3,
