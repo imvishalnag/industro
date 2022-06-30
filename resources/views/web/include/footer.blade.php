@@ -9,7 +9,7 @@
                         	<div class="footer-h-left"> 
                                 <div class="widget widget_about">
                                     <div class="logo-footer clearfix">
-                                        <a href="index.html"><img src="{{asset('web/images/logo.webp')}}" alt="" ></a>
+                                        <a href="index.html"><img src="{{asset('web/images/foot-logo.webp')}}" alt="" ></a>
                                     </div>
                                  </div>
                                 <div class="widget recent-posts-entry mb-0">
