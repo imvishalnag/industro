@@ -8825,7 +8825,7 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	background: red;
 	/* font-family: 'Teko', sans-serif; */
 	font-weight: 900;
-	width: 120%;
+	width: 140%;
 	border-radius: 20px;
 	text-align: center;
 	position: absolute;
@@ -8835,6 +8835,12 @@ ol.comment-list li.comment .comment-respond .comment-form p {
 	animation-iteration-count: infinite;
 	animation-timing-function: linear;
 	/* Opera */
+}
+@media (min-width: 1201px) {	
+	.header-info>ul li strong {
+		width: 120%;
+		/* Opera */
+	}
 }
 @media (min-width: 1368px) {	
 	.header-info>ul li strong {
