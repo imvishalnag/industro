@@ -247,7 +247,7 @@
             <!-- ABOUT ONE SECTION END -->    
 
             <!-- OUR TEAM START -->
-            <div class="section-full p-t0 p-b50 bg-white arc2-team-wrapper">
+            <div class="section-full p-t40 p-b0 bg-white arc2-team-wrapper">
                 <div class="section-content container-fluid">
                     
                     <!-- TITLE START-->
