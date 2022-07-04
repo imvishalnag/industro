@@ -271,7 +271,7 @@
                                     <div class="wt-info p-a20">
                                         <div class="team-detail  text-center">
                                             <h4 class="m-0">{{$items->page->name}}</h4>
-                                            <p>{{$items->page->short_description}}</p>
+                                            <p class="line-clamp-3">{{$items->page->short_description}}</p>
                                             <div class="btn btn-outline-secondary py-0 mt-2">Know more</div>
                                         </div>
                                     </div>
